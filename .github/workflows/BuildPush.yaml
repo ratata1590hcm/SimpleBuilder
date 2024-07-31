@@ -18,3 +18,4 @@ jobs:
       - run: docker-compose logs --tail all
         if: always()
       - run: docker-compose push
+      - run: docker-compose down -v
