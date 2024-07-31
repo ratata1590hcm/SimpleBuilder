@@ -7,7 +7,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./data/registry:/var/lib/registry
+      - /registry_cache:/var/lib/registry
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s

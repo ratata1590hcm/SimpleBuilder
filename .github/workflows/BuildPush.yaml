@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: mkdir -p /registry_cache
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3
       # - uses: docker/login-action@v2
