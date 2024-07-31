@@ -28,13 +28,13 @@ services:
       docker_registry:
         condition: service_healthy
 
-  task1:
+  build:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
     volumes:
       - workspace:/workspace
-      - ./task/task1:/action
+      - ./task/build:/action
     image: localhost:5000/library/ubuntu:latest
     build:
       context: build/ubuntu
