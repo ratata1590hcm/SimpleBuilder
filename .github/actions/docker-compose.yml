@@ -7,7 +7,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - /registry_cache:/var/lib/registry
+      - ./registry_cache:/var/lib/registry
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s
@@ -50,9 +50,9 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/build:/action
-    image: localhost:5000/library/ubuntu:latest
+    image: localhost:5000/library/docker:latest
     build:
-      context: build/bash
+      context: build/docker
     depends_on:
       trunk_check:
         condition: service_completed_successfully
