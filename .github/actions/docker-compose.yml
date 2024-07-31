@@ -7,8 +7,8 @@ services:
     ports:
       - 5000:5000
     volumes:
-      # - ./registry_cache:/var/lib/registry
-      - ./data:/var/lib/registry
+      - /registry_cache:/var/lib/registry
+      # - ./data:/var/lib/registry
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s
@@ -21,8 +21,8 @@ services:
     working_dir: /workspace
     volumes:
       - workspace:/workspace
-      # - ${GITHUB_WORKSPACE}:/code
-      - ./:/code
+      - ${GITHUB_WORKSPACE}:/code
+      # - ./:/code
       - ./task/checkout_source:/action
     image: localhost:5000/library/git:latest
     build:
@@ -68,11 +68,12 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/trivy_scan:/action
+      - /var/run/docker.sock:/var/run/docker.sock
     image: localhost:5000/aquasec/trivy:latest
     build:
       context: build/trivy
     depends_on:
-      trunk_check:
+      build:
         condition: service_completed_successfully
 
   done:
@@ -86,7 +87,8 @@ services:
     build:
       context: build/bash
     depends_on:
-      - build
+      trivy_scan:
+        condition: service_completed_successfully
 
 volumes:
   workspace:
