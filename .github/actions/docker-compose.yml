@@ -53,7 +53,7 @@ services:
     build:
       context: build/bash
     depends_on:
-      - task1
+      - build
 
 volumes:
   workspace:
