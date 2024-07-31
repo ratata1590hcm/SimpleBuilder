@@ -10,4 +10,3 @@ fi
 # Run Trunk check
 echo "Running Trunk check..."
 trunk check
-echo "Trunk check complete."
