@@ -19,6 +19,7 @@ services:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
+    user: root
     volumes:
       - workspace:/workspace
       - ../../:/code
@@ -34,6 +35,7 @@ services:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
+    user: root
     volumes:
       - workspace:/workspace
       - ./task/trunk_check:/action
@@ -63,6 +65,7 @@ services:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
+    user: root
     volumes:
       - workspace:/workspace
       - ./task/trivy_scan:/action
