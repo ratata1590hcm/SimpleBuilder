@@ -30,13 +30,14 @@ services:
 
   trunk_check:
     entrypoint: /bin/bash
-    image: localhost:5000/g3rhard/docker-trunk-ubuntu:latest
-    build:
-      context: build/trunk
+    command: /action/run.sh
+    working_dir: /workspace
     volumes:
       - workspace:/workspace
       - ./task/trunk_check:/action
-    command: /action/run.sh
+    image: localhost:5000/g3rhard/docker-trunk-ubuntu:latest
+    build:
+      context: build/trunk
     depends_on:
       checkout_source:
         condition: service_completed_successfully
