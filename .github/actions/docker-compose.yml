@@ -37,7 +37,7 @@ services:
       - ./task/build:/action
     image: localhost:5000/library/ubuntu:latest
     build:
-      context: build/ubuntu
+      context: build/bash
     depends_on:
       checkout_source:
         condition: service_completed_successfully
@@ -51,7 +51,7 @@ services:
       - ./task/done:/action
     image: localhost:5000/library/ubuntu:latest
     build:
-      context: build/ubuntu
+      context: build/bash
     depends_on:
       - task1
 
