@@ -33,7 +33,7 @@ services:
     build:
       context: build/trunk
     volumes:
-      - .:/code
+      - workspace:/code
     command: trunk check /code
     depends_on:
       checkout_source:
