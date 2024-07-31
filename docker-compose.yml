@@ -22,23 +22,34 @@ services:
       docker_registry:
         condition: service_healthy
     entrypoint: /bin/bash
-    command: /wait_result.sh
+    command: /action/run.sh
     volumes:
       - ./task/checkout_source:/action
-      - ./task/wait_result.sh:/wait_result.sh
-      - ./workspace:/workspace
+      - workspace:/workspace
     working_dir: /workspace
-    healthcheck:
-      test: [ "CMD-SHELL", "bash /action/run.sh || exit 1" ]
-      interval: 0s
-      timeout: 10s
-      retries: 0
+
+  task1:
+    image: localhost:5000/library/ubuntu:latest
+    build:
+      context: build/ubuntu
+    depends_on:
+      checkout_source:
+        condition: service_completed_successfully
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    volumes:
+      - ./task/task1:/action
+      - workspace:/workspace
+    working_dir: /workspace
 
   done:
     image: localhost:5000/library/ubuntu:latest
     build:
       context: build/ubuntu
     depends_on:
-      checkout_source:
-        condition: service_healthy
+      task1:
+        condition: service_completed_successfully
     command: /bin/bash -c "echo done"
+
+volumes:
+  workspace:
