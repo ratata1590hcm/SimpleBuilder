@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS cache
+FROM ubuntu:22.04
 USER root
 COPY packages.txt /tmp/
 RUN apt-get update && \
@@ -15,6 +15,3 @@ RUN curl https://get.trunk.io -fsSL | bash -s -- -y && \
 ENTRYPOINT [ "bash" ]
 USER daemon
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "bash || exit 1" ]
-
-FROM scratch
-COPY --from=cache / /
