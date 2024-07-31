@@ -21,7 +21,6 @@ services:
     depends_on:
       docker_registry:
         condition: service_healthy
-    entrypoint: /bin/sh
     command: /wait_result.sh
     volumes:
       - ./task/checkout_source:/action
