@@ -52,11 +52,10 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/build:/action
-      - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
-    image: localhost:5000/library/ubuntu:latest
+    image: localhost:5000/library/docker:latest
     build:
-      context: build/bash
+      context: build/docker
     depends_on:
       trunk_check:
         condition: service_completed_successfully
