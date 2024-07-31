@@ -29,6 +29,7 @@ services:
         condition: service_healthy
 
   trunk_check:
+    entrypoint: /bin/bash
     image: localhost:5000/g3rhard/docker-trunk-ubuntu:latest
     build:
       context: build/trunk
