@@ -1,0 +1,30 @@
+services:
+  registry:
+    image: localhost:5000/library/registry:2
+    build:
+      context: build/registry
+
+  git:
+    image: localhost:5000/library/git:latest
+    build:
+      context: build/git
+
+  trunk:
+    image: localhost:5000/g3rhard/docker-trunk-bash:latest
+    build:
+      context: build/trunk
+
+  docker:
+    image: localhost:5000/library/docker:latest
+    build:
+      context: build/docker
+
+  trivy:
+    image: localhost:5000/aquasec/trivy:latest
+    build:
+      context: build/trivy
+
+  bash:
+    image: localhost:5000/library/bash:latest
+    build:
+      context: build/bash

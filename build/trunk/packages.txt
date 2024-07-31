@@ -1,3 +1,5 @@
 bash
+curl
 ca-certificates
-btop
+git
+git-lfs
