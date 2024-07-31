@@ -1,7 +1,9 @@
 # trunk-ignore-all(checkov/CKV2_GHA_1)
 name: Docker Compose Action
 
-on: [push]
+on:
+  push: {}
+  workflow_dispatch: {}
 
 jobs:
   build:
