@@ -21,9 +21,17 @@ jobs:
       - run: docker-compose logs --tail all
         working-directory: ./.github/actions/
         if: always()
+      - run: docker-compose logs --tail all > build.log
+        working-directory: ./.github/actions/
+        if: always()
       - run: docker-compose push
         working-directory: ./.github/actions/
         if: always()
       - run: docker-compose down -v
         working-directory: ./.github/actions/
         if: always()
+      - name: Upload build log
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-log
+          path: ./.github/actions/build.log
