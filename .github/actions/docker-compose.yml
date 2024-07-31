@@ -33,8 +33,9 @@ services:
     build:
       context: build/trunk
     volumes:
-      - workspace:/code
-    command: trunk check /code
+      - workspace:/workspace
+      - ./task/trunk_check:/action
+    command: /action/run.sh
     depends_on:
       checkout_source:
         condition: service_completed_successfully
