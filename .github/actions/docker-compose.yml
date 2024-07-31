@@ -37,7 +37,7 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/trunk_check:/action
-    image: localhost:5000/g3rhard/docker-trunk-ubuntu:latest
+    image: localhost:5000/g3rhard/docker-trunk-bash:latest
     build:
       context: build/trunk
     depends_on:
@@ -82,7 +82,7 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/done:/action
-    image: localhost:5000/library/ubuntu:latest
+    image: localhost:5000/library/bash:latest
     build:
       context: build/bash
     depends_on:
