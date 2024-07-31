@@ -13,6 +13,5 @@ jobs:
       #   with:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker-compose down -v
-      - run: docker-compose run --rm done
+      - run: docker-compose run --rm --build done
       - run: docker-compose push
