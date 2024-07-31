@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   docker_registry:
     image: localhost:5000/library/registry:2
@@ -10,41 +8,37 @@ services:
       - 5000:5000
     volumes:
       - ./data/registry:/var/lib/registry
-    networks:
-      - devops_network
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s
       timeout: 10s
       retries: 3
 
-  docker_stack_task:
+  checkout_source:
+    image: localhost:5000/library/git:latest
+    build:
+      context: build/git
+    depends_on:
+      docker_registry:
+        condition: service_healthy
+    entrypoint: /bin/sh
+    command: /wait_result.sh
+    volumes:
+      - ./task/checkout_source:/action
+      - ./task/wait_result.sh:/wait_result.sh
+      - ./workspace:/workspace
+    working_dir: /workspace
+    healthcheck:
+      test: [ "CMD-SHELL", "bash /action/run.sh || exit 1" ]
+      interval: 0s
+      timeout: 10s
+      retries: 0
+
+  done:
     image: localhost:5000/library/ubuntu:latest
     build:
       context: build/ubuntu
     depends_on:
-      docker_registry:
-        condition: service_healthy
-    command: /bin/sh -c "ls -la && echo $? > /result && sleep infinity"
-    networks:
-      - devops_network
-    healthcheck:
-      test: ["CMD", "cat", "/result"]
-      interval: 2s
-      timeout: 10s
-      retries: 3
-
-  done:
-    image: localhost:5000/library/bash:latest
-    build:
-      context: build/bash
-    depends_on:
-      docker_stack_task:
+      checkout_source:
         condition: service_healthy
     command: /bin/bash -c "echo done"
-    networks:
-      - devops_network
-
-networks:
-  devops_network:
-    driver: bridge
