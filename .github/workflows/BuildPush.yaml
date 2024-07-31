@@ -22,5 +22,7 @@ jobs:
         if: always()
       - run: docker-compose push
         working-directory: ./.github/actions/
+        if: always()
       - run: docker-compose down -v
         working-directory: ./.github/actions/
+        if: always()
