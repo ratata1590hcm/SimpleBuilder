@@ -50,6 +50,7 @@ services:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
+    user: root
     volumes:
       - workspace:/workspace
       - ./task/build:/action

@@ -1,6 +1,5 @@
 FROM ubuntu:22.04
 USER root
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "sh || exit 1" ]
 COPY packages.txt /tmp/
 RUN apt-get update && \
     xargs -a /tmp/packages.txt apt-get install -yqq --no-install-recommends && \
@@ -13,5 +12,6 @@ RUN curl https://get.trunk.io -fsSL | bash -s -- -y && \
     chmod -R 777 /usr/local/bin/* && \
     mkdir -p /usr/sbin/.cache && \
     chmod -R 777 /usr/sbin/.cache
-SHELL [ "bash" ]
+ENTRYPOINT [ "bash" ]
 USER daemon
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "bash || exit 1" ]
