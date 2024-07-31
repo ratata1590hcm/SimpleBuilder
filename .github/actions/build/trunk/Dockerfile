@@ -9,5 +9,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/packages.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN curl https://get.trunk.io -fsSL | bash -s -- -y
+RUN curl https://get.trunk.io -fsSL | bash -s -- -y && \
+    chmod -R 777 /usr/local/bin/* && \
+    mkdir -p /usr/sbin/.cache && \
+    chmod -R 777 /usr/sbin/.cache
 USER daemon
