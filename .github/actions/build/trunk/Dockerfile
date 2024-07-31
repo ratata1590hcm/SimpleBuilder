@@ -1,0 +1,1 @@
+FROM g3rhard/docker-trunk-ubuntu:latest

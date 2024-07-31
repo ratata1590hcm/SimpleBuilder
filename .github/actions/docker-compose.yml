@@ -28,6 +28,17 @@ services:
       docker_registry:
         condition: service_healthy
 
+  trunk_check:
+    image: localhost:5000/g3rhard/docker-trunk-ubuntu:latest
+    build:
+      context: build/trunk
+    volumes:
+      - .:/code
+    command: trunk check /code
+    depends_on:
+      checkout_source:
+        condition: service_completed_successfully
+
   build:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -39,7 +50,7 @@ services:
     build:
       context: build/bash
     depends_on:
-      checkout_source:
+      trunk_check:
         condition: service_completed_successfully
 
   done:
