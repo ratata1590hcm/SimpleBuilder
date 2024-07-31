@@ -21,8 +21,7 @@ services:
     working_dir: /workspace
     volumes:
       - workspace:/workspace
-      - ${GITHUB_WORKSPACE}:/code
-      # - ./:/code
+      - ../../:/code
       - ./task/checkout_source:/action
     image: localhost:5000/library/git:latest
     build:
