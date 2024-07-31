@@ -9,7 +9,6 @@ services:
     volumes:
       - /registry_cache:/var/lib/registry
       - docker_data:/var/lib/docker
-      # - ./data:/var/lib/registry
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s
