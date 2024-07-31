@@ -1,6 +1,6 @@
 services:
   docker_registry:
-    image: localhost:5000/library/registry:2
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/registry:latest
     build:
       context: build/registry
     user: root
@@ -10,11 +10,6 @@ services:
     volumes:
       - /registry_cache:/var/lib/registry
       - docker_data_registry:/var/lib/docker
-    healthcheck:
-      test: nc -z localhost 5000 || exit 1
-      interval: 2s
-      timeout: 10s
-      retries: 3
 
   checkout_source:
     entrypoint: /bin/bash
@@ -25,7 +20,7 @@ services:
       - workspace:/workspace
       - ../../:/code
       - ./task/checkout_source:/action
-    image: localhost:5000/library/git:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/git:latest
     build:
       context: build/git
     depends_on:
@@ -40,7 +35,7 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/trunk_check:/action
-    image: localhost:5000/g3rhard/docker-trunk-bash:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
     build:
       context: build/trunk
     depends_on:
@@ -57,7 +52,7 @@ services:
       - ./task/build:/action
       - /var/run/docker.sock:/var/run/docker.sock
       - docker_data_build:/var/lib/docker
-    image: localhost:5000/library/docker:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/docker:latest
     build:
       context: build/docker
     depends_on:
@@ -74,7 +69,7 @@ services:
       - ./task/trivy_scan:/action
       - /var/run/docker.sock:/var/run/docker.sock
       - /root:/root
-    image: localhost:5000/aquasec/trivy:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trivy:latest
     build:
       context: build/trivy
     depends_on:
@@ -88,7 +83,7 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/done:/action
-    image: localhost:5000/library/bash:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/bash:latest
     build:
       context: build/bash
     depends_on:

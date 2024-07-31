@@ -1,30 +1,30 @@
 services:
   registry:
-    image: localhost:5000/library/registry:2
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/registry:latest
     build:
       context: build/registry
 
   git:
-    image: localhost:5000/library/git:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/git:latest
     build:
       context: build/git
 
   trunk:
-    image: localhost:5000/g3rhard/docker-trunk-bash:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
     build:
       context: build/trunk
 
   docker:
-    image: localhost:5000/library/docker:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/docker:latest
     build:
       context: build/docker
 
   trivy:
-    image: localhost:5000/aquasec/trivy:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trivy:latest
     build:
       context: build/trivy
 
   bash:
-    image: localhost:5000/library/bash:latest
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/bash:latest
     build:
       context: build/bash
