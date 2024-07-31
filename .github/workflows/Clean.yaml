@@ -1,6 +1,7 @@
-name: Docker Compose Action
+name: Docker Compose Clean
 
-on: [push]
+on:
+  workflow_dispatch: {}
 
 jobs:
   build:
