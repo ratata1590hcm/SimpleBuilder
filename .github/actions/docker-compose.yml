@@ -8,7 +8,7 @@ services:
       - 5000:5000
     volumes:
       - /registry_cache:/var/lib/registry
-      - docker_data:/var/lib/docker
+      - docker_data_registry:/var/lib/docker
     healthcheck:
       test: nc -z localhost 5000 || exit 1
       interval: 2s
@@ -55,6 +55,7 @@ services:
       - workspace:/workspace
       - ./task/build:/action
       - /var/run/docker.sock:/var/run/docker.sock
+      - docker_data_build:/var/lib/docker
     image: localhost:5000/library/docker:latest
     build:
       context: build/docker
@@ -95,4 +96,5 @@ services:
 
 volumes:
   workspace:
-  docker_data:
+  docker_data_registry:
+  docker_data_build:
