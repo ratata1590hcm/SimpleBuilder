@@ -1,4 +1,6 @@
-FROM registry:2
+FROM registry:2 AS cache
 USER daemon
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD nc -z localhost 5000 || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD nc -z localhost 5000 || exit 1
+
+FROM scratch
+COPY --from=cache / /
