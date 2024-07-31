@@ -47,9 +47,13 @@ services:
     build:
       context: build/ubuntu
     depends_on:
-      task1:
-        condition: service_completed_successfully
-    command: /bin/bash -c "echo done"
+      - task1
+    volumes:
+      - ./task/done:/action
+      - workspace:/workspace
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
 
 volumes:
   workspace:

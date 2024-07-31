@@ -15,4 +15,6 @@ jobs:
       #     password: ${{ secrets.DOCKER_PASSWORD }}
       - run: docker-compose build
       - run: docker-compose run --rm done
+      - run: docker-compose logs --tail all
+        if: always()
       - run: docker-compose push
