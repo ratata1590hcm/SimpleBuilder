@@ -15,45 +15,45 @@ services:
       retries: 3
 
   checkout_source:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    volumes:
+      - workspace:/workspace
+      - ./task/checkout_source:/action
     image: localhost:5000/library/git:latest
     build:
       context: build/git
     depends_on:
       docker_registry:
         condition: service_healthy
-    entrypoint: /bin/bash
-    command: /action/run.sh
-    volumes:
-      - ./task/checkout_source:/action
-      - workspace:/workspace
-    working_dir: /workspace
 
   task1:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    volumes:
+      - workspace:/workspace
+      - ./task/task1:/action
     image: localhost:5000/library/ubuntu:latest
     build:
       context: build/ubuntu
     depends_on:
       checkout_source:
         condition: service_completed_successfully
-    entrypoint: /bin/bash
-    command: /action/run.sh
-    volumes:
-      - ./task/task1:/action
-      - workspace:/workspace
-    working_dir: /workspace
 
   done:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    volumes:
+      - workspace:/workspace
+      - ./task/done:/action
     image: localhost:5000/library/ubuntu:latest
     build:
       context: build/ubuntu
     depends_on:
       - task1
-    volumes:
-      - ./task/done:/action
-      - workspace:/workspace
-    entrypoint: /bin/bash
-    command: /action/run.sh
-    working_dir: /workspace
 
 volumes:
   workspace:
