@@ -37,7 +37,7 @@ for image in ${images}; do
 	echo "Scanning ${image} for critical vulnerabilities..."
 
 	# Perform the scan with Trivy and output in JSON format
-	output=$(trivy image --ignore-unfixed --severity CRITICAL --scanners vuln --exit-code 1 --format json "${image}")
+	output=$(trivy -q image --ignore-unfixed --severity CRITICAL --scanners vuln --exit-code 1 --format json "${image}")
 	found=$?
 
 	# Handle Trivy errors
