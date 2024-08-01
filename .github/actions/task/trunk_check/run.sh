@@ -9,4 +9,4 @@ fi
 
 # Run Trunk check
 echo "Running Trunk check..."
-trunk check -a
+trunk check -a --no-progress --color=false
