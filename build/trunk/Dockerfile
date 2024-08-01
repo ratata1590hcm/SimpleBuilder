@@ -4,7 +4,7 @@ COPY packages.txt /tmp/
 RUN apt-get update && \
     xargs -a /tmp/packages.txt apt-get install -yqq --no-install-recommends && \
     update-ca-certificates && \
-    apt-get upgrade && \
+    apt-get upgrade -yqq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/packages.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
