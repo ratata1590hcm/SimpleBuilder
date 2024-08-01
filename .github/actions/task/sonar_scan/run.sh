@@ -7,6 +7,7 @@ if [[ -f ".env.sonar" ]]; then
 	source .env.sonar
 else
 	echo "skip sonar scan .env.sonar not exist"
+	exit
 fi
 
 scan() {
