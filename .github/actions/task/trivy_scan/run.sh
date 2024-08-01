@@ -52,3 +52,13 @@ for image in ${images}; do
 	fi
 
 done
+# Define the directory to search. You can change this to your desired directory.
+SEARCH_DIR="."
+
+# Check for any _critical.json files
+if ls "${SEARCH_DIR}"/*_critical.json 1>/dev/null 2>&1; then
+	echo "Critical JSON file(s) found. Exiting with status code 1."
+	exit 1
+else
+	echo "No critical JSON files found."
+fi
