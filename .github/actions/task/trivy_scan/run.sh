@@ -5,12 +5,12 @@ COMPOSE_FILE="docker-compose.yml"
 
 # Load environment variables from a .env file if it exists
 if [[ -f .env ]]; then
-	export "$(grep -v '^#' .env | xargs)"
+	source .env
 fi
 
 # Check for necessary environment variables and set defaults if not provided
-REGISTRY_HOST=${REGISTRY_HOST:-"localhost"}
-REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE:-"namespace"}
+REGISTRY_HOST=${REGISTRY_HOST:-"localhost:5000/"}
+REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE:-"library"}
 
 # Check if the file exists
 if [[ ! -f ${COMPOSE_FILE} ]]; then
@@ -25,31 +25,30 @@ images=$(grep -E 'image:' "${COMPOSE_FILE}" | awk '{print $2}')
 # Loop through each image and scan with Trivy for critical vulnerabilities
 for image in ${images}; do
 	# Replace placeholders with actual environment variables if present
-	# trunk-ignore(shellcheck/SC2312)
-	image=$(echo "${image}" | sed "s|\${REGISTRY_HOST}|${REGISTRY_HOST}|g" | sed "s|\${REGISTRY_NAMESPACE}|${REGISTRY_NAMESPACE}|g")
+	# trunk-ignore(shellcheck/SC2001)
+	image=$(echo "${image}" | sed "s|\${REGISTRY_HOST}\${REGISTRY_NAMESPACE}|${REGISTRY_HOST}${REGISTRY_NAMESPACE}|g")
+
+	# Check if image is empty or invalid
+	if [[ -z ${image} ]]; then
+		echo "Invalid image name extracted. Skipping..."
+		continue
+	fi
 
 	echo "Scanning ${image} for critical vulnerabilities..."
 
 	# Perform the scan with Trivy and output in JSON format
-	output=$(trivy image --severity CRITICAL --exit-code 1 --format json "${image}" 2>&1)
+	output=$(trivy image --ignore-unfixed --severity CRITICAL --scanners vuln --exit-code 1 --format json "${image}")
+	found=$?
 
 	# Handle Trivy errors
-	# trunk-ignore(shellcheck/SC2181)
-	if [[ $? -ne 0 ]]; then
-		echo "Error scanning image ${image}: ${output}"
+	json_file="${image//[:\/]/_}_critical.json"
+	if [[ ${found} -ne 0 ]]; then
+		echo "${output}" | jq '.' 2>/dev/null >"${json_file}"
+		echo "Critical vulnerabilities found for ${image}, check ${json_file}"
 		continue
-	fi
-
-	# Save the output to a JSON file named after the image (replacing : with _)
-	echo "${output}" | jq '.' >"${image//[:\/]/_}_critical_vulnerabilities.json"
-
-	# Extract critical vulnerabilities
-	critical_vulnerabilities=$(echo "${output}" | jq -r '.Results[].Vulnerabilities[] | select(.Severity == "CRITICAL") | .VulnerabilityID')
-
-	if [[ -z ${critical_vulnerabilities} ]]; then
-		echo "No critical vulnerabilities found for ${image}."
 	else
-		echo "Critical vulnerabilities found for ${image}:"
-		echo "${critical_vulnerabilities}"
+		echo "No critical vulnerabilities found for ${image}."
+		rm -rf "${json_file}"
 	fi
+
 done
