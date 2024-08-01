@@ -14,6 +14,11 @@ services:
     build:
       context: build/trunk
 
+  sonar:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonar:latest
+    build:
+      context: build/sonar
+
   docker:
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/docker:latest
     build:
