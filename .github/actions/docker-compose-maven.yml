@@ -42,6 +42,66 @@ services:
       checkout_source:
         condition: service_completed_successfully
 
+  # build_jdk8:
+  #   entrypoint: /bin/bash
+  #   command: /action/run.sh
+  #   working_dir: /workspace
+  #   user: root
+  #   volumes:
+  #     - workspace:/workspace
+  #     - ./task/maven_build:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk8
+  #   build:
+  #     context: build/maven_jdk8
+  #   depends_on:
+  #     checkout_source:
+  #       condition: service_completed_successfully
+
+  # build_jdk11:
+  #   entrypoint: /bin/bash
+  #   command: /action/run.sh
+  #   working_dir: /workspace
+  #   user: root
+  #   volumes:
+  #     - workspace:/workspace
+  #     - ./task/maven_build:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk11
+  #   build:
+  #     context: build/maven_jdk11
+  #   depends_on:
+  #     checkout_source:
+  #       condition: service_completed_successfully
+
+  # build_jdk17:
+  #   entrypoint: /bin/bash
+  #   command: /action/run.sh
+  #   working_dir: /workspace
+  #   user: root
+  #   volumes:
+  #     - workspace:/workspace
+  #     - ./task/maven_build:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk17
+  #   build:
+  #     context: build/maven_jdk17
+  #   depends_on:
+  #     checkout_source:
+  #       condition: service_completed_successfully
+
+  # build_jdk21:
+  #   entrypoint: /bin/bash
+  #   command: /action/run.sh
+  #   working_dir: /workspace
+  #   user: root
+  #   volumes:
+  #     - workspace:/workspace
+  #     - ./task/maven_build:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk21
+  #   build:
+  #     context: build/maven_jdk21
+  #   depends_on:
+  #     checkout_source:
+  #       condition: service_completed_successfully
+
   done:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -55,6 +115,14 @@ services:
     depends_on:
       build:
         condition: service_completed_successfully
+      # build_jdk8:
+      #   condition: service_completed_successfully
+      # build_jdk11:
+      #   condition: service_completed_successfully
+      # build_jdk17:
+      #   condition: service_completed_successfully
+      # build_jdk21:
+      #   condition: service_completed_successfully
 
 volumes:
   workspace:
