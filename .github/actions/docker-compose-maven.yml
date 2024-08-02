@@ -1,0 +1,61 @@
+services:
+  docker_registry:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/registry:latest
+    build:
+      context: build/registry
+    user: root
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - /registry_cache:/var/lib/registry
+      - docker_data_registry:/var/lib/docker
+
+  checkout_source:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ../../maven:/code
+      - ./task/checkout_source:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/git:latest
+    build:
+      context: build/git
+    depends_on:
+      docker_registry:
+        condition: service_healthy
+
+  build:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/maven_build:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:latest
+    build:
+      context: build/maven
+    depends_on:
+      checkout_source:
+        condition: service_completed_successfully
+
+  done:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    volumes:
+      - workspace:/workspace
+      - ./task/done:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/bash:latest
+    build:
+      context: build/bash
+    depends_on:
+      build:
+        condition: service_completed_successfully
+
+volumes:
+  workspace:
+  docker_data_registry:

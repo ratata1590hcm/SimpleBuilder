@@ -15,5 +15,9 @@ cleanup() {
 trap cleanup EXIT
 
 # Start the containers in the background
-docker-compose build >/dev/null 2>&1
-docker-compose up -d
+# docker-compose build >/dev/null 2>&1
+# docker-compose up -d
+
+# test maven
+docker-compose -f docker-compose-maven.yml build >/dev/null 2>&1
+docker-compose -f docker-compose-maven.yml up -d
