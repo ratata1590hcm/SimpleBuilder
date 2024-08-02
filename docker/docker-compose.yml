@@ -33,3 +33,28 @@ services:
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/bash:latest
     build:
       context: build/bash
+
+  maven:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:latest
+    build:
+      context: build/maven
+
+  maven_jdk8:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk8
+    build:
+      context: build/maven_jdk8
+
+  maven_jdk11:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk11
+    build:
+      context: build/maven_jdk11
+
+  maven_jdk17:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk17
+    build:
+      context: build/maven_jdk17
+
+  maven_jdk21:
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:jdk21
+    build:
+      context: build/maven_jdk21
