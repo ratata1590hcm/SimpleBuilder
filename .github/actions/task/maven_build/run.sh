@@ -1,2 +1,2 @@
 #!/bin/bash
-mvn -s /workspace/.m2/settings.xml clean install
+mvn -s /workspace/.m2/settings.xml -B -q clean install
