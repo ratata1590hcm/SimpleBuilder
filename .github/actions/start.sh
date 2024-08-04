@@ -3,21 +3,21 @@
 # Function to handle script exit
 cleanup() {
 	echo "export logs..."
-	docker-compose logs --tail all >build.log
+	docker compose -f "${COMPOSE_FILE}" logs --tail all >build.log
 	cat build.log
 	echo "Pushing images to registry..."
-	docker-compose push >/dev/null 2>&1
+	docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1
 	echo "Taking down the environment..."
-	docker-compose down -v >/dev/null 2>&1
+	docker compose -f "${COMPOSE_FILE}" down -v >/dev/null 2>&1
 }
 
 # Set the trap to call cleanup function on EXIT signal
 trap cleanup EXIT
 
 # Start the containers in the background
-# docker-compose build >/dev/null 2>&1
-# docker-compose up -d
-
-# test maven
-docker-compose -f docker-compose-maven.yml build >/dev/null 2>&1
-docker-compose -f docker-compose-maven.yml up -d
+# default
+COMPOSE_FILE=docker-compose-docker.yml
+# maven
+# COMPOSE_FILE=docker-compose-maven.yml
+docker compose -f "${COMPOSE_FILE}" build >/dev/null 2>&1
+docker compose -f "${COMPOSE_FILE}" up -d
