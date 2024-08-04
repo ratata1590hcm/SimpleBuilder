@@ -18,9 +18,7 @@ services:
     user: root
     volumes:
       - workspace:/workspace
-      - ../../docker:/code
-      - ../../.git:/code/.git
-      - ../../.trunk:/code/.trunk
+      - ../../:/code
       - ./task/checkout_source:/action
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/git:latest
     build:
