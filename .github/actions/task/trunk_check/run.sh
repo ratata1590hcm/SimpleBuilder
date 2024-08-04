@@ -1,4 +1,5 @@
 #!/bin/bash
+git init
 if [[ ! -d ".trunk" ]]; then
 	echo "Trunk is not initialized. Initializing..."
 	trunk init
