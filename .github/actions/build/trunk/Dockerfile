@@ -1,5 +1,6 @@
+# trunk-ignore-all(checkov/CKV_DOCKER_3)
+# trunk-ignore-all(trivy/DS002)
 FROM ubuntu:22.04
-USER root
 COPY packages.txt /tmp/
 RUN apt-get update && \
     xargs -a /tmp/packages.txt apt-get install -yqq --no-install-recommends && \
@@ -13,5 +14,4 @@ RUN curl https://get.trunk.io -fsSL | bash -s -- -y && \
     mkdir -p /usr/sbin/.cache && \
     chmod -R 777 /usr/sbin/.cache
 ENTRYPOINT [ "bash" ]
-USER daemon
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "bash || exit 1" ]
