@@ -16,8 +16,6 @@ trap cleanup EXIT
 
 # Start the containers in the background
 # default
-COMPOSE_FILE=docker-compose-docker.yml
-# maven
-# COMPOSE_FILE=docker-compose-maven.yml
+COMPOSE_FILE=docker-compose.yml
 docker compose -f "${COMPOSE_FILE}" build >/dev/null 2>&1
 docker compose -f "${COMPOSE_FILE}" up -d

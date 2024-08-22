@@ -227,3 +227,4 @@ services:
 volumes:
   workspace:
   docker_data_registry:
+  docker_data_build:
