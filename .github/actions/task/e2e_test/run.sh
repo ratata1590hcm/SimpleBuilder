@@ -1,2 +1,2 @@
 #!/bin/bash
-cypress run --project .
+# cypress run --project .

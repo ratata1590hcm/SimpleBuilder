@@ -1,15 +1,15 @@
 services:
-  docker_registry:
-    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/registry:latest
-    build:
-      context: build/registry
-    user: root
-    restart: always
-    ports:
-      - 5000:5000
-    volumes:
-      - /registry_cache:/var/lib/registry
-      - docker_data_registry:/var/lib/docker
+  # docker_registry:
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/registry:latest
+  #   build:
+  #     context: build/registry
+  #   user: root
+  #   restart: always
+  #   ports:
+  #     - 5000:5000
+  #   volumes:
+  #     - /registry_cache:/var/lib/registry
+  #     - docker_data_registry:/var/lib/docker
 
   checkout_source:
     entrypoint: /bin/bash
@@ -25,9 +25,9 @@ services:
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/git:latest
     build:
       context: build/git
-    depends_on:
-      docker_registry:
-        condition: service_healthy
+    # depends_on:
+    #   docker_registry:
+    #     condition: service_healthy
 
   license_scan:
     entrypoint: /bin/bash
@@ -45,7 +45,7 @@ services:
         condition: service_completed_successfully
 
   dependency_scan:
-    entrypoint: /bin/bash
+    entrypoint: /bin/sh
     command: /action/run.sh
     working_dir: /workspace
     user: root

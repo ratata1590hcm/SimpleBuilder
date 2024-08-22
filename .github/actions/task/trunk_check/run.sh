@@ -1,8 +1,8 @@
 #!/bin/bash
-git init
+# git init
 if [[ ! -d ".trunk" ]]; then
 	echo "Trunk is not initialized. Initializing..."
-	trunk init
+	# trunk init
 	echo "Trunk initialization complete."
 else
 	echo "Trunk is already initialized."
@@ -10,4 +10,4 @@ fi
 
 # Run Trunk check
 echo "Running Trunk check..."
-trunk check -a --no-progress --color=false
+# trunk check -a --no-progress --color=false

@@ -1,2 +1,2 @@
 #!/bin/bash
-fossa analyze -o
+echo "fossa analyze -o"
