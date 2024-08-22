@@ -1,5 +1,0 @@
-bash
-curl
-ca-certificates
-git
-git-lfs

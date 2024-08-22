@@ -1,0 +1,21 @@
+services:
+  java_latest:
+    image: localhost:5000/library/openjdk:latest
+    build:
+      context: build/java_latest
+    # entrypoint: [ "/sshd", "-u", "root:" ]
+    entrypoint: java -jar app.jar
+    working_dir: /config
+    environment:
+      - HOME=/config
+    networks:
+      - java_network
+    restart: unless-stopped
+    volumes:
+      # - /config:/config
+      - ./.m2:/root/.m2
+      # - /mnt:/mnt
+      # - /usr/local/bin/sshd-mini:/sshd
+
+networks:
+  java_network:
