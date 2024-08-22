@@ -130,6 +130,7 @@ services:
     user: root
     volumes:
       - workspace:/workspace
+      - ../../docker:/code
       - ./task/build:/action
       - /var/run/docker.sock:/var/run/docker.sock
       - docker_data_build:/var/lib/docker
