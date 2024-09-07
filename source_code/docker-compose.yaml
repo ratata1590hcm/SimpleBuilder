@@ -1,0 +1,16 @@
+services:
+  java_latest:
+    image: localhost:5000/library/app:latest
+    build:
+      context: app
+    entrypoint: [ "/sshd", "-u", "root:" ]
+    # entrypoint: java -jar app.jar
+    working_dir: /app
+    networks:
+      - java_network
+    restart: unless-stopped
+    volumes:
+      - /usr/local/bin/sshd-mini:/sshd
+
+networks:
+  java_network:
