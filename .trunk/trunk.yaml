@@ -33,4 +33,4 @@ lint:
   ignore:
     - linters: [ALL]
       paths:
-        - reports/**
+        - report/**

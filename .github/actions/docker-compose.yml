@@ -67,6 +67,7 @@ services:
     volumes:
       - workspace:/workspace
       - ./task/trunk_check:/action
+      - /trunk_cache:/root
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
     build:
       context: build/trunk

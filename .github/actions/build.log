@@ -1,47 +1,9 @@
-dependency_scan-1  | [INFO] Checking for updates
-dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
-dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
-dependency_scan-1  | [INFO] Check for updates complete (1955 ms)
 checkout_source-1  | done
-dependency_scan-1  | [INFO] 
-dependency_scan-1  | 
-dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
-dependency_scan-1  | 
-dependency_scan-1  | 
-dependency_scan-1  |    About ODC: https://jeremylong.github.io/DependencyCheck/general/internals.html
-dependency_scan-1  |    False Positives: https://jeremylong.github.io/DependencyCheck/general/suppression.html
-dependency_scan-1  | 
-dependency_scan-1  | 💖 Sponsor: https://github.com/sponsors/jeremylong
-dependency_scan-1  | 
-dependency_scan-1  | 
-dependency_scan-1  | [INFO] Analysis Started
-dependency_scan-1  | [INFO] Finished File Name Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Dependency Merging Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Hint Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Version Filter Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Created CPE Index (2 seconds)
-dependency_scan-1  | [INFO] Finished CPE Analyzer (2 seconds)
-dependency_scan-1  | [INFO] Finished False Positive Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished NVD CVE Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Sonatype OSS Index Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Vulnerability Suppression Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Known Exploited Vulnerability Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Dependency Bundling Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Finished Unused Suppression Rule Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Analysis Complete (2 seconds)
-dependency_scan-1  | [INFO] Writing XML report to: /workspace/./report/dependency-check-report.xml
-dependency_scan-1  | [INFO] Writing HTML report to: /workspace/./report/dependency-check-report.html
-dependency_scan-1  | [INFO] Writing JSON report to: /workspace/./report/dependency-check-report.json
-dependency_scan-1  | [INFO] Writing CSV report to: /workspace/./report/dependency-check-report.csv
-dependency_scan-1  | [INFO] Writing SARIF report to: /workspace/./report/dependency-check-report.sarif
-dependency_scan-1  | [INFO] Writing JENKINS report to: /workspace/./report/dependency-check-jenkins.html
-dependency_scan-1  | [INFO] Writing JUNIT report to: /workspace/./report/dependency-check-junit.xml
-dependency_scan-1  | [INFO] Writing GITLAB report to: /workspace/./report/dependency-check-gitlab.json
+checkout_source-1  | done
 trunk_check-1      | Trunk is already initialized.
 trunk_check-1      | Running Trunk check...
 trunk_check-1      | ⡿ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⡿ Downloading Trunk 1.22.2...
-dependency_scan-1  | dependency check passed!
 trunk_check-1      | [1F[0K⢿ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⣻ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⣽ Downloading Trunk 1.22.2...
@@ -59,9 +21,6 @@ trunk_check-1      | [1F[0K⣯ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⣟ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⡿ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K⢿ Downloading Trunk 1.22.2...
-trunk_check-1      | [1F[0K⣻ Downloading Trunk 1.22.2...
-trunk_check-1      | [1F[0K⣽ Downloading Trunk 1.22.2...
-trunk_check-1      | [1F[0K⣾ Downloading Trunk 1.22.2...
 trunk_check-1      | [1F[0K[0;32m✔[0m Downloading Trunk 1.22.2... done
 trunk_check-1      | ⡿ Unpacking Trunk...
 trunk_check-1      | [1F[0K[0;32m✔[0m Unpacking Trunk... done
@@ -86,12 +45,14 @@ trunk_check-1      | [0m[90m    | [0m[32m    },
 trunk_check-1      | [0m[90m    | [0m[32m    "analyzer": {
 trunk_check-1      | [0m[90m    | [0m[32m      "id": "org.owasp.dependency-check",
 trunk_check-1      | [0m[90m    | [0m[32m      "name": "Dependency-Check Core",
+dependency_scan-1  | [INFO] Checking for updates
+dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
 trunk_check-1      | [0m[90m    | [0m[32m      "version": "10.0.3",
 trunk_check-1      | [0m[90m    | [0m[32m      "vendor": { "name": "OWASP" },
 trunk_check-1      | [0m[90m    | [0m[32m      "url": "https://github.com/jeremylong/DependencyCheck/"
 trunk_check-1      | [0m[90m    | [0m[32m    },
-trunk_check-1      | [0m[90m    | [0m[32m    "end_time": "2024-09-08T15:26:35",
-trunk_check-1      | [0m[90m    | [0m[32m    "start_time": "2024-09-08T15:26:35",
+trunk_check-1      | [0m[90m    | [0m[32m    "end_time": "2024-09-08T15:34:07",
+trunk_check-1      | [0m[90m    | [0m[32m    "start_time": "2024-09-08T15:34:07",
 trunk_check-1      | [0m[90m    | [0m[32m    "status": "success",
 trunk_check-1      | [0m[90m    | [0m[32m    "type": "dependency_scanning"
 trunk_check-1      | [0m[90m    | [0m[32m  },
@@ -117,8 +78,13 @@ trunk_check-1      | [0m[90m    | [0m[32m    ]
 trunk_check-1      | [0m[90m    | [0m[32m  },
 trunk_check-1      | [0m[90m    | [0m[32m  "projectInfo": {
 trunk_check-1      | [0m[90m    | [0m[32m    "name": "dependency-check scan",
-trunk_check-1      | [0m[90m    | [0m[32m    "reportDate": "2024-09-08T15:26:35.297809960Z",
+trunk_check-1      | [0m[90m    | [0m[32m    "reportDate": "2024-09-08T15:34:07.286527601Z",
 trunk_check-1      | [0m[90m    | [0m[32m    "credits": {
+dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
+dependency_scan-1  | [INFO] Check for updates complete (1795 ms)
+dependency_scan-1  | [INFO] 
+dependency_scan-1  | 
+dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
 trunk_check-1      | [0m[90m    | [0m[32m      "NVD": "This product uses the NVD API but is not endorsed or certified by the NVD. This report contains data retrieved from the National Vulnerability Database: https://nvd.nist.gov",
 trunk_check-1      | [0m[90m    | [0m[32m      "CISA": "This report may contain data retrieved from the CISA Known Exploited Vulnerability Catalog: https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
 trunk_check-1      | [0m[90m    | [0m[32m      "NPM": "This report may contain data retrieved from the Github Advisory Database (via NPM Audit API): https://github.com/advisories/",
@@ -130,6 +96,22 @@ trunk_check-1      | [0m[90m    | [0m[32m  "dependencies": []
 trunk_check-1      | [0m[90m    | [0m[32m}
 trunk_check-1      | [0m
 trunk_check-1      | [1m[4mreport/dependency-check-jenkins.html
+dependency_scan-1  | 
+dependency_scan-1  | 
+dependency_scan-1  |    About ODC: https://jeremylong.github.io/DependencyCheck/general/internals.html
+dependency_scan-1  |    False Positives: https://jeremylong.github.io/DependencyCheck/general/suppression.html
+dependency_scan-1  | 
+dependency_scan-1  | 💖 Sponsor: https://github.com/sponsors/jeremylong
+dependency_scan-1  | 
+dependency_scan-1  | 
+dependency_scan-1  | [INFO] Analysis Started
+dependency_scan-1  | [INFO] Finished File Name Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Dependency Merging Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Hint Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Version Filter Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Created CPE Index (2 seconds)
+dependency_scan-1  | [INFO] Finished CPE Analyzer (2 seconds)
+dependency_scan-1  | [INFO] Finished False Positive Analyzer (0 seconds)
 trunk_check-1      | [0m[1m[90m 1:1[0m[31m  high[0m  Incorrect formatting[1m[90m  
 trunk_check-1      | [0m
 trunk_check-1      | [90m    1 | [0m[31m
@@ -139,7 +121,62 @@ trunk_check-1      | [0m[90m    3 | [0m<html>
 trunk_check-1      | [90m    4 | [0m[31m    <head>
 trunk_check-1      | [0m[90m    5 | [0m[31m        <title>Dependency-Check Report</title>
 trunk_check-1      | [0m[90m    6 | [0m[31m        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+dependency_scan-1  | [INFO] Finished NVD CVE Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Sonatype OSS Index Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Vulnerability Suppression Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Known Exploited Vulnerability Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Dependency Bundling Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Unused Suppression Rule Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Analysis Complete (2 seconds)
+dependency_scan-1  | [INFO] Writing XML report to: /workspace/./report/dependency-check-report.xml
+dependency_scan-1  | [INFO] Writing HTML report to: /workspace/./report/dependency-check-report.html
+dependency_scan-1  | [INFO] Writing JSON report to: /workspace/./report/dependency-check-report.json
+dependency_scan-1  | [INFO] Writing CSV report to: /workspace/./report/dependency-check-report.csv
+dependency_scan-1  | [INFO] Writing SARIF report to: /workspace/./report/dependency-check-report.sarif
+dependency_scan-1  | [INFO] Writing JENKINS report to: /workspace/./report/dependency-check-jenkins.html
+dependency_scan-1  | [INFO] Writing JUNIT report to: /workspace/./report/dependency-check-junit.xml
+dependency_scan-1  | [INFO] Writing GITLAB report to: /workspace/./report/dependency-check-gitlab.json
+dependency_scan-1  | dependency check passed!
+dependency_scan-1  | [INFO] Checking for updates
+dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
+dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
+dependency_scan-1  | [INFO] Check for updates complete (1229 ms)
+dependency_scan-1  | [INFO] 
+dependency_scan-1  | 
+dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
+dependency_scan-1  | 
+dependency_scan-1  | 
+dependency_scan-1  |    About ODC: https://jeremylong.github.io/DependencyCheck/general/internals.html
+dependency_scan-1  |    False Positives: https://jeremylong.github.io/DependencyCheck/general/suppression.html
+dependency_scan-1  | 
+dependency_scan-1  | 💖 Sponsor: https://github.com/sponsors/jeremylong
+dependency_scan-1  | 
+dependency_scan-1  | 
+dependency_scan-1  | [INFO] Analysis Started
+dependency_scan-1  | [INFO] Finished File Name Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Dependency Merging Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Hint Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Version Filter Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Created CPE Index (2 seconds)
+dependency_scan-1  | [INFO] Finished CPE Analyzer (2 seconds)
+dependency_scan-1  | [INFO] Finished False Positive Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished NVD CVE Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Sonatype OSS Index Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Vulnerability Suppression Analyzer (0 seconds)
 trunk_check-1      | [0m[90m    7 | [0m[31m        <link rel="shortcut icon" href="data:;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVLSURBVFhHvZdvbFRFEMB3913v9Vr+FKUNRdtrewg... [1802 characters hidden][0m[31m
+dependency_scan-1  | [INFO] Finished Known Exploited Vulnerability Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Dependency Bundling Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Finished Unused Suppression Rule Analyzer (0 seconds)
+dependency_scan-1  | [INFO] Analysis Complete (2 seconds)
+dependency_scan-1  | [INFO] Writing XML report to: /workspace/./report/dependency-check-report.xml
+dependency_scan-1  | [INFO] Writing HTML report to: /workspace/./report/dependency-check-report.html
+dependency_scan-1  | [INFO] Writing JSON report to: /workspace/./report/dependency-check-report.json
+dependency_scan-1  | [INFO] Writing CSV report to: /workspace/./report/dependency-check-report.csv
+dependency_scan-1  | [INFO] Writing SARIF report to: /workspace/./report/dependency-check-report.sarif
+dependency_scan-1  | [INFO] Writing JENKINS report to: /workspace/./report/dependency-check-jenkins.html
+dependency_scan-1  | [INFO] Writing JUNIT report to: /workspace/./report/dependency-check-junit.xml
+dependency_scan-1  | [INFO] Writing GITLAB report to: /workspace/./report/dependency-check-gitlab.json
+dependency_scan-1  | dependency check passed!
 trunk_check-1      | [0m[90m    8 | [0m[31m        <style type="text/css">
 trunk_check-1      | [0m[90m    9 | [0m[31m            #modal-background {
 trunk_check-1      | [0m[90m   10 | [0m[31m                display: none;
