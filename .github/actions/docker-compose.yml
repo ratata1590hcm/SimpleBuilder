@@ -27,20 +27,20 @@ services:
     #   docker_registry:
     #     condition: service_healthy
 
-  # license_scan:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/license_scan:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/fossas_cli:latest
-  #   build:
-  #     context: build/fossas_cli
-  #   depends_on:
-  #     checkout_source:
-  #       condition: service_completed_successfully
+  license_scan:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/license_scan:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/fossas_cli:latest
+    build:
+      context: build/fossas_cli
+    depends_on:
+      checkout_source:
+        condition: service_completed_successfully
 
   # dependency_scan:
   #   entrypoint: /bin/sh
@@ -57,20 +57,20 @@ services:
   #     checkout_source:
   #       condition: service_completed_successfully
 
-  # trunk_check:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/trunk_check:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
-  #   build:
-  #     context: build/trunk
-  #   depends_on:
-  #     license_scan:
-  #       condition: service_completed_successfully
+  trunk_check:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/trunk_check:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
+    build:
+      context: build/trunk
+    depends_on:
+      license_scan:
+        condition: service_completed_successfully
   #     dependency_scan:
   #       condition: service_completed_successfully
 
@@ -118,7 +118,7 @@ services:
     build:
       context: build/docker
     depends_on:
-      checkout_source:
+      trunk_check:
         condition: service_completed_successfully
 
   # performance_test:
