@@ -137,10 +137,10 @@ services:
     build:
       context: build/docker
     depends_on:
-      sonar_scan:
-        condition: service_completed_successfully
-      # trunk_check:
+      # sonar_scan:
       #   condition: service_completed_successfully
+      sonarlint:
+        condition: service_completed_successfully
 
   # performance_test:
   #   entrypoint: /bin/bash
