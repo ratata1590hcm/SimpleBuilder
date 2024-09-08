@@ -191,9 +191,11 @@ services:
     entrypoint: /bin/bash
     command: /action/run.sh
     working_dir: /workspace
+    user: root
     volumes:
       - workspace:/workspace
       - ./task/done:/action
+      - ./output:/output
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/bash:latest
     build:
       context: build/bash
