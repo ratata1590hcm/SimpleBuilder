@@ -27,6 +27,7 @@ services:
     #   docker_registry:
     #     condition: service_healthy
 
+  # TODO: not done
   # license_scan:
   #   entrypoint: /bin/bash
   #   command: /action/run.sh
@@ -58,23 +59,24 @@ services:
       checkout_source:
         condition: service_completed_successfully
 
-  # trunk_check:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/trunk_check:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
-  #   build:
-  #     context: build/trunk
-  #   depends_on:
-  #     license_scan:
-  #       condition: service_completed_successfully
-  #     dependency_scan:
-  #       condition: service_completed_successfully
+  trunk_check:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/trunk_check:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
+    build:
+      context: build/trunk
+    depends_on:
+      # license_scan:
+      #   condition: service_completed_successfully
+      dependency_scan:
+        condition: service_completed_successfully
 
+  # TODO: not done
   # code_coverage:
   #   entrypoint: /bin/bash
   #   command: /action/run.sh
@@ -90,6 +92,7 @@ services:
   #     trunk_check:
   #       condition: service_completed_successfully
 
+  # TODO: test please
   # sonar_scan:
   #   entrypoint: /bin/bash
   #   command: /action/run.sh
@@ -105,6 +108,21 @@ services:
   #     trunk_check:
   #       condition: service_completed_successfully
 
+  sonarlint:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/usr/src
+      - ./task/sonarlint:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonarlint:latest
+    build:
+      context: build/sonarlint
+    depends_on:
+      trunk_check:
+        condition: service_completed_successfully
+
   build:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -119,7 +137,7 @@ services:
     build:
       context: build/docker
     depends_on:
-      dependency_scan:
+      sonar_scan:
         condition: service_completed_successfully
       # trunk_check:
       #   condition: service_completed_successfully
