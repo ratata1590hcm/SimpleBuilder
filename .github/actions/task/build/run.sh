@@ -1,3 +1,4 @@
 #!/bin/bash
-cp -rf /code/** /workspace
-docker compose build
+set -e
+cd source_code
+docker compose build --progress=plain --pull | grep -v "Pulling" || true

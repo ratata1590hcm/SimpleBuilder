@@ -104,40 +104,22 @@ services:
   #     trunk_check:
   #       condition: service_completed_successfully
 
-  # maven_build:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/maven_build:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:latest
-  #   build:
-  #     context: build/maven
-  #   depends_on:
-  #     sonar_scan:
-  #       condition: service_completed_successfully
-  #     code_coverage:
-  #       condition: service_completed_successfully
-
-  # build:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ../../docker:/code
-  #     - ./task/build:/action
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - docker_data_build:/var/lib/docker
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/docker:latest
-  #   build:
-  #     context: build/docker
-  #   depends_on:
-  #     maven_build:
-  #       condition: service_completed_successfully
+  build:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/build:/action
+      - /var/run/docker.sock:/var/run/docker.sock
+      - docker_data_build:/var/lib/docker
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/docker:latest
+    build:
+      context: build/docker
+    depends_on:
+      checkout_source:
+        condition: service_completed_successfully
 
   # performance_test:
   #   entrypoint: /bin/bash
@@ -213,7 +195,7 @@ services:
     build:
       context: build/bash
     depends_on:
-      checkout_source:
+      build:
         condition: service_completed_successfully
     #   performance_test:
     #     condition: service_completed_successfully
