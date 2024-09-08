@@ -5,8 +5,8 @@ cleanup() {
 	echo "export logs..."
 	docker compose -f "${COMPOSE_FILE}" logs --tail all >build.log
 	cat build.log
-	echo "Pushing images to registry..."
-	docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1
+	# echo "Pushing images to registry..."
+	# docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1
 	echo "Taking down the environment..."
 	docker compose -f "${COMPOSE_FILE}" down -v
 }
