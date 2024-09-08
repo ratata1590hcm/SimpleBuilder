@@ -30,3 +30,7 @@ lint:
     - trivy@0.54.1
     - trufflehog@3.80.5
     - yamllint@1.35.1
+  ignore:
+    - linters: [ALL]
+      paths:
+        - reports/**
