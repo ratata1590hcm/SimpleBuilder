@@ -1,1 +1,6 @@
-.trunk
+# Ignore everything in .trunk directory
+.trunk/*
+
+# Do not ignore the configs directory and its contents
+!.trunk/configs/
+!.trunk/configs/**

@@ -6,9 +6,10 @@ COPY .m2 .
 RUN mvn dependency:go-offline
 COPY . .
 RUN mvn clean package
-RUN ls -la target
+USER daemon
 
 FROM openjdk:21
+USER daemon
 WORKDIR /app
 COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
 ENTRYPOINT [ "java", "-jar", "app.jar" ]

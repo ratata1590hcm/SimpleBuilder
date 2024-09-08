@@ -19,13 +19,11 @@
 # fi
 
 # # Extract and list all Docker images from docker-compose.yml
-# # trunk-ignore(shellcheck/SC2312)
 # images=$(grep -E 'image:' "${COMPOSE_FILE}" | awk '{print $2}')
 
 # # Loop through each image and scan with Trivy for critical vulnerabilities
 # for image in ${images}; do
 # 	# Replace placeholders with actual environment variables if present
-# 	# trunk-ignore(shellcheck/SC2001)
 # 	image=$(echo "${image}" | sed "s|\${REGISTRY_HOST}\${REGISTRY_NAMESPACE}|${REGISTRY_HOST}${REGISTRY_NAMESPACE}|g")
 
 # 	# Check if image is empty or invalid

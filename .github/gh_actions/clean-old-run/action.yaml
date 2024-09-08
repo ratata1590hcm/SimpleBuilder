@@ -1,0 +1,58 @@
+name: Cleanup Workflow completed run
+description: Deletes previous runs of the current workflow
+inputs:
+  github_token:
+    description: GitHub Token
+    required: true
+    default: ${{ github.token }}
+  cancel_run:
+    description: Cancel running one
+    required: false
+    default: true
+
+runs:
+  using: composite
+  steps:
+    - name: Delete old workflow logs
+      run: |
+        # Fetch the workflow runs
+        WORKFLOW_ID=$(curl -s -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ inputs.github_token }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/repos/${{ github.repository }}/actions/workflows | jq -r '.workflows[] | select(.name == "${{ github.workflow }}") | .id')
+
+        RUNS=$(curl -s -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ inputs.github_token }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          "https://api.github.com/repos/${{ github.repository }}/actions/runs" | jq -r --arg WORKFLOW_ID "${WORKFLOW_ID}" --arg CURRENT_RUN_ID "${{ github.run_id }}" '.workflow_runs[] | select(.workflow_id == ($WORKFLOW_ID | tonumber) and .id != ($CURRENT_RUN_ID | tonumber)) | .id')
+
+        # Loop over each run and delete its logs
+        for RUN in $RUNS; do
+          echo "Deleting logs for run: $RUN"
+
+          STATUS=$(curl -s -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ inputs.github_token }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/$RUN" | jq -r '.status')
+
+          if [ "$STATUS" == "in_progress" ]; then
+            if [ "${{ inputs.cancel_run }}" == "true" ]; then
+              curl -s -X POST \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer ${{ inputs.github_token }}" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                https://api.github.com/repos/${{ github.repository }}/actions/runs/$RUN/cancel
+              sleep 40
+            fi
+          fi
+
+          curl -s -X DELETE \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ inputs.github_token }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/$RUN"
+        done
+      shell: bash

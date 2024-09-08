@@ -15,7 +15,6 @@
     <build>
         <finalName>app</finalName>
         <plugins>
-            <!-- This plugin helps create the JAR file with all dependencies -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -26,7 +25,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.App</mainClass> <!-- Specify the main class -->
+                            <mainClass>com.example.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -41,5 +40,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
