@@ -6,7 +6,7 @@ const reportFilePath = process.argv[2];
 
 // Check if the report file path is provided
 if (!reportFilePath) {
-  console.error("Usage: node check.js <path_to_report.json>");
+  console.error("Usage: node check_report.js <path_to_report.json>");
   process.exit(1);
 }
 

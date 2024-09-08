@@ -1,80 +1,32 @@
-build-1  | --progress is a global compose flag, better use `docker compose --progress xx build ...
-build-1  | #0 building with "default" instance using docker driver
-build-1  | 
-build-1  | #1 [java_latest internal] load build definition from Dockerfile
-build-1  | #1 transferring dockerfile: 459B done
-build-1  | #1 DONE 0.1s
-build-1  | 
-build-1            | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
+build-1            | --progress is a global compose flag, better use `docker compose --progress xx build ...
 dependency_scan-1  | [INFO] Checking for updates
-build-1            | #2 ...
+build-1            | #0 building with "default" instance using docker driver
 build-1            | 
-build-1            | #3 [java_latest internal] load metadata for docker.io/library/openjdk:21
-build-1            | #3 DONE 1.0s
+build-1            | #1 [java_latest internal] load build definition from Dockerfile
+build-1            | #1 transferring dockerfile: 459B done
+build-1            | #1 DONE 0.1s
 build-1            | 
 build-1            | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
-build-1            | #2 DONE 1.1s
-build-1            | 
-build-1            | #4 [java_latest internal] load .dockerignore
-build-1            | #4 transferring context:
-build-1            | #4 transferring context: 2B done
-build-1            | #4 DONE 0.1s
-build-1            | 
-build-1            | #5 [java_latest stage-1 1/3] FROM docker.io/library/openjdk:21@sha256:af9de795d1f8d3b6172f6c55ca9ba1c5768baa11bb2dc8af7045c7db9d4c33ac
-build-1            | #5 DONE 0.0s
-build-1            | 
-build-1            | #6 [java_latest build 1/7] FROM docker.io/library/maven:3.9.8-eclipse-temurin-21@sha256:de18e4e51396ad9266f76669779ed6d6b49fbb0f45ed6f39169d87378d548d7d
-build-1            | #6 DONE 0.0s
-checkout_source-1  | done
-build-1            | 
-build-1            | #7 [java_latest internal] load build context
-build-1            | #7 transferring context: 3.82kB done
-build-1            | #7 DONE 0.1s
-build-1            | 
-build-1            | #8 [java_latest build 7/7] RUN mvn clean package
-build-1            | #8 CACHED
 dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
 dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
-dependency_scan-1  | [INFO] Check for updates complete (944 ms)
+dependency_scan-1  | [INFO] Check for updates complete (1178 ms)
 dependency_scan-1  | [INFO] 
 dependency_scan-1  | 
 dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
 dependency_scan-1  | 
 dependency_scan-1  | 
 dependency_scan-1  |    About ODC: https://jeremylong.github.io/DependencyCheck/general/internals.html
-build-1            | 
-build-1            | #9 [java_latest build 2/7] WORKDIR /app
-build-1            | #9 CACHED
-build-1            | 
-build-1            | #10 [java_latest build 3/7] COPY pom.xml .
-build-1            | #10 CACHED
-build-1            | 
-build-1            | #11 [java_latest build 4/7] COPY .m2 .
-build-1            | #11 CACHED
-build-1            | 
-build-1            | #12 [java_latest build 6/7] COPY . .
-build-1            | #12 CACHED
-build-1            | 
-build-1            | #13 [java_latest stage-1 2/3] WORKDIR /app
-build-1            | #13 CACHED
-build-1            | 
-build-1            | #14 [java_latest build 5/7] RUN mvn dependency:go-offline
-build-1            | #14 CACHED
-build-1            | 
-build-1            | #15 [java_latest stage-1 3/3] COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
-build-1            | #15 CACHED
-build-1            | 
-build-1            | #16 [java_latest] exporting to image
-build-1            | #16 exporting layers done
-build-1            | #16 writing image sha256:5dbe4e227911a6e015f29332e6305430a2b0617eb8d496e1e0a4e19536a689b3 done
-build-1            | #16 naming to localhost:5000/library/app:latest done
-build-1            | #16 DONE 0.0s
-build-1            | 
-build-1            | #17 [java_latest] resolving provenance for metadata file
-build-1            | #17 DONE 0.0s
 dependency_scan-1  |    False Positives: https://jeremylong.github.io/DependencyCheck/general/suppression.html
 dependency_scan-1  | 
 dependency_scan-1  | 💖 Sponsor: https://github.com/sponsors/jeremylong
+build-1            | #2 DONE 2.4s
+build-1            | 
+build-1            | #3 [java_latest internal] load metadata for docker.io/library/openjdk:21
+build-1            | #3 DONE 2.4s
+build-1            | 
+build-1            | #4 [java_latest internal] load .dockerignore
+build-1            | #4 transferring context: 2B done
+build-1            | #4 DONE 0.1s
 dependency_scan-1  | 
 dependency_scan-1  | 
 dependency_scan-1  | [INFO] Analysis Started
@@ -84,6 +36,16 @@ dependency_scan-1  | [INFO] Finished Hint Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Version Filter Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Created CPE Index (1 seconds)
 dependency_scan-1  | [INFO] Finished CPE Analyzer (1 seconds)
+build-1            | 
+build-1            | #5 [java_latest stage-1 1/3] FROM docker.io/library/openjdk:21@sha256:af9de795d1f8d3b6172f6c55ca9ba1c5768baa11bb2dc8af7045c7db9d4c33ac
+build-1            | #5 DONE 0.0s
+build-1            | 
+build-1            | #6 [java_latest build 1/7] FROM docker.io/library/maven:3.9.8-eclipse-temurin-21@sha256:de18e4e51396ad9266f76669779ed6d6b49fbb0f45ed6f39169d87378d548d7d
+build-1            | #6 DONE 0.0s
+build-1            | 
+build-1            | #7 [java_latest internal] load build context
+build-1            | #7 transferring context: 3.67kB done
+build-1            | #7 DONE 0.1s
 dependency_scan-1  | [INFO] Finished False Positive Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished NVD CVE Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Sonatype OSS Index Analyzer (0 seconds)
@@ -93,6 +55,10 @@ dependency_scan-1  | [INFO] Finished Dependency Bundling Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Unused Suppression Rule Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Analysis Complete (1 seconds)
 dependency_scan-1  | [INFO] Writing XML report to: /workspace/./report/dependency-check-report.xml
+build-1            | 
+build-1            | #8 [java_latest build 4/7] COPY .m2 .
+build-1            | #8 CACHED
+build-1            | 
 dependency_scan-1  | [INFO] Writing HTML report to: /workspace/./report/dependency-check-report.html
 dependency_scan-1  | [INFO] Writing JSON report to: /workspace/./report/dependency-check-report.json
 dependency_scan-1  | [INFO] Writing CSV report to: /workspace/./report/dependency-check-report.csv
@@ -100,4 +66,35 @@ dependency_scan-1  | [INFO] Writing SARIF report to: /workspace/./report/depende
 dependency_scan-1  | [INFO] Writing JENKINS report to: /workspace/./report/dependency-check-jenkins.html
 dependency_scan-1  | [INFO] Writing JUNIT report to: /workspace/./report/dependency-check-junit.xml
 dependency_scan-1  | [INFO] Writing GITLAB report to: /workspace/./report/dependency-check-gitlab.json
+dependency_scan-1  | dependency check passed!
+checkout_source-1  | done
+build-1            | #9 [java_latest build 6/7] COPY . .
+build-1            | #9 CACHED
+build-1            | 
+build-1            | #10 [java_latest build 7/7] RUN mvn clean package
+build-1            | #10 CACHED
+build-1            | 
+build-1            | #11 [java_latest build 3/7] COPY pom.xml .
+build-1            | #11 CACHED
+build-1            | 
+build-1            | #12 [java_latest build 5/7] RUN mvn dependency:go-offline
+build-1            | #12 CACHED
+build-1            | 
+build-1            | #13 [java_latest build 2/7] WORKDIR /app
+build-1            | #13 CACHED
+build-1            | 
+build-1            | #14 [java_latest stage-1 2/3] WORKDIR /app
+build-1            | #14 CACHED
+build-1            | 
+build-1            | #15 [java_latest stage-1 3/3] COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
+build-1            | #15 CACHED
+build-1            | 
+build-1            | #16 [java_latest] exporting to image
+build-1            | #16 exporting layers done
+build-1            | #16 writing image sha256:a1e516f4310aae61b8a0cb7b1ab04326619518025c7356ce2950d49a231157e7 done
+build-1            | #16 naming to localhost:5000/library/app:latest 0.0s done
+build-1            | #16 DONE 0.0s
+build-1            | 
+build-1            | #17 [java_latest] resolving provenance for metadata file
+build-1            | #17 DONE 0.0s
 done-1             | done
