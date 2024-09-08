@@ -1,5 +1,5 @@
 #!/bin/bash
-sonarlint --src source_code > sonar_lint.log
+sonarlint --src source_code >sonar_lint.log
 
 # Extract the line with the number of issues
 issue_line=$(grep "issue (" sonar_lint.log)

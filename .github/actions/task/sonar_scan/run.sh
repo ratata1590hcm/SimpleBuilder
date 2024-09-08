@@ -3,7 +3,6 @@ env_file=".env.sonar"
 
 # Load environment variables from a .env file if it exists
 if [[ -f ".env.sonar" ]]; then
-	# trunk-ignore(shellcheck/SC1091)
 	source .env.sonar
 else
 	echo "skip sonar scan .env.sonar not exist"
