@@ -21,11 +21,6 @@ public class App {
                 Thread.currentThread().interrupt(); // Properly re-interrupt the thread
                 logger.severe("Thread was interrupted: " + e.getMessage());
             }
-
-            // Add a condition to stop the loop
-            if (/* some condition */) {
-                running = false;
-            }
         }
     }
 }
