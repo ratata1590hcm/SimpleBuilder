@@ -27,50 +27,51 @@ services:
     #   docker_registry:
     #     condition: service_healthy
 
-  license_scan:
-    entrypoint: /bin/bash
-    command: /action/run.sh
-    working_dir: /workspace
-    user: root
-    volumes:
-      - workspace:/workspace
-      - ./task/license_scan:/action
-    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/fossas_cli:latest
-    build:
-      context: build/fossas_cli
-    depends_on:
-      checkout_source:
-        condition: service_completed_successfully
-
-  # dependency_scan:
-  #   entrypoint: /bin/sh
+  # license_scan:
+  #   entrypoint: /bin/bash
   #   command: /action/run.sh
   #   working_dir: /workspace
   #   user: root
   #   volumes:
   #     - workspace:/workspace
-  #     - ./task/dependency_scan:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/dependency_scan:latest
+  #     - ./task/license_scan:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/fossas_cli:latest
   #   build:
-  #     context: build/owasp_dependency_check
+  #     context: build/fossas_cli
   #   depends_on:
   #     checkout_source:
   #       condition: service_completed_successfully
 
-  trunk_check:
-    entrypoint: /bin/bash
+  dependency_scan:
+    entrypoint: /bin/sh
     command: /action/run.sh
     working_dir: /workspace
     user: root
     volumes:
       - workspace:/workspace
-      - ./task/trunk_check:/action
-    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
+      - ./task/dependency_scan:/action
+      - /dependency_scan_cache:/usr/share/dependency-check/data
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/dependency_scan:latest
     build:
-      context: build/trunk
+      context: build/owasp_dependency_check
     depends_on:
-      license_scan:
+      checkout_source:
         condition: service_completed_successfully
+
+  # trunk_check:
+  #   entrypoint: /bin/bash
+  #   command: /action/run.sh
+  #   working_dir: /workspace
+  #   user: root
+  #   volumes:
+  #     - workspace:/workspace
+  #     - ./task/trunk_check:/action
+  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trunk:latest
+  #   build:
+  #     context: build/trunk
+  #   depends_on:
+  #     license_scan:
+  #       condition: service_completed_successfully
   #     dependency_scan:
   #       condition: service_completed_successfully
 
@@ -118,8 +119,10 @@ services:
     build:
       context: build/docker
     depends_on:
-      trunk_check:
+      dependency_scan:
         condition: service_completed_successfully
+      # trunk_check:
+      #   condition: service_completed_successfully
 
   # performance_test:
   #   entrypoint: /bin/bash

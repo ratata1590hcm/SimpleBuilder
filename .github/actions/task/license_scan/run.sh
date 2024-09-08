@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "fossa analyze -o"
+/bin/fossologyscanner nomos ojo
