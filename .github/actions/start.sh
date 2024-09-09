@@ -16,7 +16,6 @@ cleanup() {
 	# docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1
 
 	# export volume
-	[[ ! -d "./output" ]] && mkdir -p "./output"
 	docker volume inspect actions_workspace &>/dev/null && docker run --rm -v actions_workspace:/mnt/volume -v ./output:/mnt/output busybox /bin/sh -c "cp -r /mnt/volume/. /mnt/output/" || echo "Volume does not exist."
 
 	echo "Taking down the environment..."
@@ -30,5 +29,7 @@ trap cleanup EXIT
 # default
 COMPOSE_FILE=docker-compose.yml
 # docker compose -f "${COMPOSE_FILE}" build >/dev/null 2>&1
+rm -rf ./output
+[[ ! -d "./output" ]] && mkdir -p "./output"
 docker compose -f "${COMPOSE_FILE}" build
 docker compose -f "${COMPOSE_FILE}" up -d
