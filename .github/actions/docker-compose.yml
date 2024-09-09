@@ -159,23 +159,25 @@ services:
       build:
         condition: service_completed_successfully
 
-  # trivy_scan:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/trivy_scan:/action
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - /root:/root
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trivy:latest
-  #   build:
-  #     context: build/trivy
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  # TODO: test please
+  trivy_scan:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/trivy_scan:/action
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root:/root
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/trivy:latest
+    build:
+      context: build/trivy
+    depends_on:
+      build:
+        condition: service_completed_successfully
 
+  # TODO: not done
   # dast_scan:
   #   entrypoint: /bin/bash
   #   command: /action/run.sh
@@ -192,6 +194,7 @@ services:
   #     build:
   #       condition: service_completed_successfully
 
+  # TODO: not done
   # e2e_test:
   #   entrypoint: /bin/bash
   #   command: /action/run.sh

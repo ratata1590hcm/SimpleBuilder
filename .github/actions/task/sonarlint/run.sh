@@ -7,11 +7,12 @@ pwd
 )
 
 # Extract the line with the number of issues
-issue_line=$(grep "issues (" sonar_lint.log)
+issue_line=$(grep -E "issue(s?) \(" sonar_lint.log)
 
 # Extract the number of issues from the line
+# Handles both singular and plural 'issue' words
 # trunk-ignore(shellcheck/SC2312)
-issue_count=$(echo "${issue_line}" | grep -oE '[0-9]+ issues' | grep -oE '[0-9]+')
+issue_count=$(echo "${issue_line}" | grep -oE '[0-9]+ issue(s?)' | grep -oE '[0-9]+')
 
 cat sonar_lint.log
 rm -f sonar_lint.log

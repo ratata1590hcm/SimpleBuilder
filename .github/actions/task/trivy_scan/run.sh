@@ -60,3 +60,4 @@
 # else
 # 	echo "No critical JSON files found."
 # fi
+trivy --version

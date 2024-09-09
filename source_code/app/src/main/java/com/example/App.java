@@ -1,4 +1,5 @@
 package com.example;
+
 import java.util.logging.Logger;
 
 public class App {
@@ -18,8 +19,10 @@ public class App {
                 // Sleep for 15 minutes
                 Thread.sleep(15L * 60 * 1000);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // Properly re-interrupt the thread
+                // Properly re-interrupt the thread to preserve the interrupt status
+                Thread.currentThread().interrupt();
                 logger.severe("Thread was interrupted: " + e.getMessage());
+                running = false;  // Optionally stop the running loop
             }
         }
     }
