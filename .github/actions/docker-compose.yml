@@ -225,8 +225,8 @@ services:
     depends_on:
       performance_test:
         condition: service_completed_successfully
-    #   trivy_scan:
-    #     condition: service_completed_successfully
+      trivy_scan:
+        condition: service_completed_successfully
     #   e2e_test:
     #     condition: service_completed_successfully
     #   dast_scan:
