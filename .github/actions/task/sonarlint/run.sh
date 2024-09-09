@@ -1,5 +1,4 @@
 #!/bin/bash
-ls -la
 pwd
 (
 	cd source_code || exit
