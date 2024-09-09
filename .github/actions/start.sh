@@ -3,7 +3,14 @@
 # Function to handle script exit
 cleanup() {
 	echo "export logs..."
-	docker compose -f "${COMPOSE_FILE}" logs --tail all >build.log
+	# docker compose -f "${COMPOSE_FILE}" logs --tail all >build.log
+	rm build.log
+	# trunk-ignore(shellcheck/SC2312)
+	docker compose -f "${COMPOSE_FILE}" config --services | while read -r service; do
+		echo "===== Logs for ${service} =====" >>build.log
+		docker compose -f "${COMPOSE_FILE}" logs --tail all "${service}" >>build.log
+	done
+
 	cat build.log
 	# echo "Pushing images to registry..."
 	# docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1

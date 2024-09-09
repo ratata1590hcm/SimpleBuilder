@@ -115,7 +115,7 @@ services:
     working_dir: /workspace
     user: root
     volumes:
-      - workspace:/usr/src
+      - workspace:/workspace
       - ./task/sonarlint:/action
     image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonarlint:latest
     build:
@@ -143,20 +143,21 @@ services:
       sonarlint:
         condition: service_completed_successfully
 
-  # performance_test:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/performance_test:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/jmeter:latest
-  #   build:
-  #     context: build/jmeter
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  # TODO: test please
+  performance_test:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/performance_test:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/jmeter:latest
+    build:
+      context: build/jmeter
+    depends_on:
+      build:
+        condition: service_completed_successfully
 
   # trivy_scan:
   #   entrypoint: /bin/bash
@@ -219,10 +220,8 @@ services:
     build:
       context: build/bash
     depends_on:
-      build:
+      performance_test:
         condition: service_completed_successfully
-    #   performance_test:
-    #     condition: service_completed_successfully
     #   trivy_scan:
     #     condition: service_completed_successfully
     #   e2e_test:

@@ -1,12 +1,17 @@
 #!/bin/bash
-sonarlint --src source_code >sonar_lint.log
+ls -la
+pwd
+(
+	cd source_code || exit
+	sonarlint >../sonar_lint.log
+)
 
 # Extract the line with the number of issues
-issue_line=$(grep "issue (" sonar_lint.log)
+issue_line=$(grep "issues (" sonar_lint.log)
 
 # Extract the number of issues from the line
 # trunk-ignore(shellcheck/SC2312)
-issue_count=$(echo "${issue_line}" | grep -oE '[0-9]+ issue' | grep -oE '[0-9]+')
+issue_count=$(echo "${issue_line}" | grep -oE '[0-9]+ issues' | grep -oE '[0-9]+')
 
 cat sonar_lint.log
 rm -f sonar_lint.log
