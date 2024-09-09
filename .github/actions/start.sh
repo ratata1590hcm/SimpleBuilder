@@ -29,7 +29,7 @@ trap cleanup EXIT
 # default
 COMPOSE_FILE=docker-compose.yml
 # docker compose -f "${COMPOSE_FILE}" build >/dev/null 2>&1
-rm -rf ./output
+sudo rm -rf ./output
 [[ ! -d "./output" ]] && mkdir -p "./output"
 docker compose -f "${COMPOSE_FILE}" build
 docker compose -f "${COMPOSE_FILE}" up -d
