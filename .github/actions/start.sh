@@ -14,6 +14,11 @@ cleanup() {
 	cat build.log
 	# echo "Pushing images to registry..."
 	# docker compose -f "${COMPOSE_FILE}" push >/dev/null 2>&1
+
+	# export volume
+	[[ ! -d "./output" ]] && mkdir -p "./output"
+	docker volume inspect actions_workspace &>/dev/null && docker run --rm -v actions_workspace:/mnt/volume -v ./output:/mnt/output busybox /bin/sh -c "cp -r /mnt/volume/. /mnt/output/" || echo "Volume does not exist."
+
 	echo "Taking down the environment..."
 	docker compose -f "${COMPOSE_FILE}" down -v
 }
