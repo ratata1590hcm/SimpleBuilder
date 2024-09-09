@@ -4,7 +4,7 @@ checkout_source-1  | done
 dependency_scan-1  | [INFO] Checking for updates
 dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
 dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
-dependency_scan-1  | [INFO] Check for updates complete (1652 ms)
+dependency_scan-1  | [INFO] Check for updates complete (1009 ms)
 dependency_scan-1  | [INFO] 
 dependency_scan-1  | 
 dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
@@ -47,16 +47,6 @@ trunk_check-1  |
 trunk_check-1  | Checked 54 files
 trunk_check-1  | ✔ No issues
 ===== Logs for sonarlint =====
-sonarlint-1  | total 8
-sonarlint-1  | drwxrwxrwx 1 root root 108 Sep  9 02:25 .
-sonarlint-1  | drwxr-xr-x 1 root root  30 Sep  9 02:25 ..
-sonarlint-1  | -rwxrwxrwx 1 root root  47 Sep  9 02:25 .env.sonar
-sonarlint-1  | drwxrwxrwx 1 root root 204 Sep  9 02:25 .git
-sonarlint-1  | drwxrwxrwx 1 root root  52 Sep  9 02:25 .github
-sonarlint-1  | -rwxrwxrwx 1 root root 141 Sep  9 02:25 .gitignore
-sonarlint-1  | drwxrwxrwx 1 root root 132 Sep  9 02:25 .trunk
-sonarlint-1  | drwxr-xr-x 1 root root 444 Sep  9 02:25 report
-sonarlint-1  | drwxrwxrwx 1 root root  52 Sep  9 02:25 source_code
 sonarlint-1  | /workspace
 sonarlint-1  | INFO: Java 1.8.0_161 Oracle Corporation (64-bit)
 sonarlint-1  | INFO: Linux 6.1.0-25-amd64 amd64
@@ -71,11 +61,11 @@ sonarlint-1  | INFO: JavaTestClasspath initialization
 sonarlint-1  | INFO: JavaTestClasspath initialization (done) | time=0ms
 sonarlint-1  | INFO: Java Main Files AST scan
 sonarlint-1  | INFO: 1 source files to be analyzed
-sonarlint-1  | INFO: Java Main Files AST scan (done) | time=302ms
+sonarlint-1  | INFO: Java Main Files AST scan (done) | time=428ms
+sonarlint-1  | INFO: 1/1 source files have been analyzed
 sonarlint-1  | INFO: Java Test Files AST scan
 sonarlint-1  | INFO: 0 source files to be analyzed
-sonarlint-1  | INFO: 1/1 source files have been analyzed
-sonarlint-1  | INFO: Java Test Files AST scan (done) | time=1ms
+sonarlint-1  | INFO: Java Test Files AST scan (done) | time=0ms
 sonarlint-1  | INFO: 0/0 source files have been analyzed
 sonarlint-1  | INFO: 1 source files to be analyzed
 sonarlint-1  | INFO: 1/1 source files have been analyzed
@@ -92,8 +82,8 @@ sonarlint-1  | INFO: SonarLint HTML Report generated: /workspace/source_code/.so
 sonarlint-1  | INFO: ------------------------------------------------------------------------
 sonarlint-1  | INFO: EXECUTION SUCCESS
 sonarlint-1  | INFO: ------------------------------------------------------------------------
-sonarlint-1  | INFO: Total time: 1.686s
-sonarlint-1  | INFO: Final Memory: 9M/392M
+sonarlint-1  | INFO: Total time: 1.723s
+sonarlint-1  | INFO: Final Memory: 9M/413M
 sonarlint-1  | INFO: ------------------------------------------------------------------------
 sonarlint-1  | No issues found by SonarLint.
 ===== Logs for build =====
@@ -108,10 +98,10 @@ build-1  | #2 [java_latest internal] load metadata for docker.io/library/maven:3
 build-1  | #2 ...
 build-1  | 
 build-1  | #3 [java_latest internal] load metadata for docker.io/library/openjdk:21
-build-1  | #3 DONE 2.6s
+build-1  | #3 DONE 2.1s
 build-1  | 
 build-1  | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
-build-1  | #2 DONE 2.6s
+build-1  | #2 DONE 2.1s
 build-1  | 
 build-1  | #4 [java_latest internal] load .dockerignore
 build-1  | #4 transferring context: 2B done
@@ -127,25 +117,25 @@ build-1  | #7 [java_latest internal] load build context
 build-1  | #7 transferring context: 4.05kB done
 build-1  | #7 DONE 0.1s
 build-1  | 
-build-1  | #8 [java_latest build 5/7] RUN mvn dependency:go-offline
+build-1  | #8 [java_latest build 4/7] COPY .m2 .
 build-1  | #8 CACHED
 build-1  | 
-build-1  | #9 [java_latest build 7/7] RUN mvn clean package
+build-1  | #9 [java_latest build 5/7] RUN mvn dependency:go-offline
 build-1  | #9 CACHED
 build-1  | 
-build-1  | #10 [java_latest build 2/7] WORKDIR /app
+build-1  | #10 [java_latest build 7/7] RUN mvn clean package
 build-1  | #10 CACHED
 build-1  | 
-build-1  | #11 [java_latest build 6/7] COPY . .
+build-1  | #11 [java_latest stage-1 2/3] WORKDIR /app
 build-1  | #11 CACHED
 build-1  | 
-build-1  | #12 [java_latest stage-1 2/3] WORKDIR /app
+build-1  | #12 [java_latest build 3/7] COPY pom.xml .
 build-1  | #12 CACHED
 build-1  | 
-build-1  | #13 [java_latest build 3/7] COPY pom.xml .
+build-1  | #13 [java_latest build 6/7] COPY . .
 build-1  | #13 CACHED
 build-1  | 
-build-1  | #14 [java_latest build 4/7] COPY .m2 .
+build-1  | #14 [java_latest build 2/7] WORKDIR /app
 build-1  | #14 CACHED
 build-1  | 
 build-1  | #15 [java_latest stage-1 3/3] COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
@@ -159,8 +149,40 @@ build-1  | #16 DONE 0.0s
 build-1  | 
 build-1  | #17 [java_latest] resolving provenance for metadata file
 build-1  | #17 DONE 0.0s
+===== Logs for e2e_test =====
+e2e_test-1  | Usage: cypress run [options]
+e2e_test-1  | 
+e2e_test-1  | Runs Cypress tests from the CLI without the GUI
+e2e_test-1  | 
+e2e_test-1  | Options:
+e2e_test-1  |   --auto-cancel-after-failures <test-failure-count || false>  overrides the project-level Cloud configuration to set the failed test threshold for auto cancellation or to disable auto cancellation when recording to the Cloud
+e2e_test-1  |   -b, --browser <browser-name-or-path>                        runs Cypress in the browser with the given name. if a filesystem path is supplied, Cypress will attempt to use the browser at that path.
+e2e_test-1  |   --ci-build-id <id>                                          the unique identifier for a run on your CI provider. typically a "BUILD_ID" env var. this value is automatically detected for most CI providers
+e2e_test-1  |   --component                                                 runs component tests
+e2e_test-1  |   -c, --config <config>                                       sets configuration values. separate multiple values with a comma. overrides any value in cypress.config.{js,ts,mjs,cjs}.
+e2e_test-1  |   -C, --config-file <config-file>                             path to script file where configuration values are set. defaults to "cypress.config.{js,ts,mjs,cjs}".
+e2e_test-1  |   --e2e                                                       runs end to end tests
+e2e_test-1  |   -e, --env <env>                                             sets environment variables. separate multiple values with a comma. overrides any value in cypress.config.{js,ts,mjs,cjs} or cypress.env.json
+e2e_test-1  |   --group <name>                                              a named group for recorded runs in Cypress Cloud
+e2e_test-1  |   -k, --key <record-key>                                      your secret Record Key. you can omit this if you set a CYPRESS_RECORD_KEY environment variable.
+e2e_test-1  |   --headed                                                    displays the browser instead of running headlessly
+e2e_test-1  |   --headless                                                  hide the browser instead of running headed (default for cypress run)
+e2e_test-1  |   --no-exit                                                   keep the browser open after tests finish
+e2e_test-1  |   --parallel                                                  enables concurrent runs and automatic load balancing of specs across multiple machines or processes
+e2e_test-1  |   -p, --port <port>                                           runs Cypress on a specific port. overrides any value in cypress.config.{js,ts,mjs,cjs}.
+e2e_test-1  |   -P, --project <project-path>                                path to the project
+e2e_test-1  |   -q, --quiet                                                 run quietly, using only the configured reporter
+e2e_test-1  |   --record [bool]                                             records the run. sends test results, screenshots and videos to Cypress Cloud.
+e2e_test-1  |   -r, --reporter <reporter>                                   runs a specific mocha reporter. pass a path to use a custom reporter. defaults to "spec"
+e2e_test-1  |   --runner-ui                                                 displays the Cypress Runner UI
+e2e_test-1  |   --no-runner-ui                                              hides the Cypress Runner UI
+e2e_test-1  |   -o, --reporter-options <reporter-options>                   options for the mocha reporter. defaults to "null"
+e2e_test-1  |   -s, --spec <spec>                                           runs specific spec file(s). defaults to "all"
+e2e_test-1  |   -t, --tag <tag>                                             named tag(s) for recorded runs in Cypress Cloud
+e2e_test-1  |   --dev                                                       runs cypress in development and bypasses binary check
+e2e_test-1  |   -h, --help                                                  display help for command
 ===== Logs for performance_test =====
-performance_test-1  | Sep 09, 2024 4:25:54 AM java.util.prefs.FileSystemPreferences$1 run
+performance_test-1  | Sep 09, 2024 1:28:57 PM java.util.prefs.FileSystemPreferences$1 run
 performance_test-1  | INFO: Created user preferences directory.
 performance_test-1  |     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____
 performance_test-1  |    / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \
@@ -170,7 +192,178 @@ performance_test-1  | /_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____
 performance_test-1  | 
 performance_test-1  | Copyright (c) 1999-2022 The Apache Software Foundation
 performance_test-1  | 
-===== Logs for done =====
-done-1  | done
 ===== Logs for trivy_scan =====
 trivy_scan-1  | Version: 0.54.0
+===== Logs for dast_scan =====
+dast_scan-1  | 2024-09-09 11:28:56 AM UTC [INFO] Starting SOOS DAST Analysis
+dast_scan-1  | --------------------------------------------------------------------------------
+dast_scan-1  | 
+dast_scan-1  | 2024-09-09 11:28:56 AM UTC [INFO] Parsing arguments
+dast_scan-1  | usage: index.js [-h] [--appVersion APPVERSION] [--branchName BRANCHNAME]
+dast_scan-1  |                 [--branchURI BRANCHURI] [--buildURI BUILDURI]
+dast_scan-1  |                 [--buildVersion BUILDVERSION] [--commitHash COMMITHASH]
+dast_scan-1  |                 [--contributingDeveloperId CONTRIBUTINGDEVELOPERID]
+dast_scan-1  |                 [--contributingDeveloperSource CONTRIBUTINGDEVELOPERSOURCE]
+dast_scan-1  |                 [--contributingDeveloperSourceName CONTRIBUTINGDEVELOPERSOURCENAME]
+dast_scan-1  |                 [--onFailure ONFAILURE]
+dast_scan-1  |                 [--operatingEnvironment OPERATINGENVIRONMENT] --projectName
+dast_scan-1  |                 PROJECTNAME [--ajaxSpider] [--apiScanFormat APISCANFORMAT]
+dast_scan-1  |                 [--authDelayTime AUTHDELAYTIME] [--authFormType AUTHFORMTYPE]
+dast_scan-1  |                 [--authLoginURL AUTHLOGINURL] [--authPassword AUTHPASSWORD]
+dast_scan-1  |                 [--authPasswordField AUTHPASSWORDFIELD]
+dast_scan-1  |                 [--authSecondSubmitField AUTHSECONDSUBMITFIELD]
+dast_scan-1  |                 [--authSubmitAction AUTHSUBMITACTION]
+dast_scan-1  |                 [--authSubmitField AUTHSUBMITFIELD]
+dast_scan-1  |                 [--authUsername AUTHUSERNAME]
+dast_scan-1  |                 [--authUsernameField AUTHUSERNAMEFIELD]
+dast_scan-1  |                 [--authVerificationURL AUTHVERIFICATIONURL]
+dast_scan-1  |                 [--bearerToken BEARERTOKEN] [--contextFile [CONTEXTFILE ...]]
+dast_scan-1  |                 [--debug] [--disableRules [DISABLERULES ...]]
+dast_scan-1  |                 [--excludeUrlsFile EXCLUDEURLSFILE]
+dast_scan-1  |                 [--fullScanMinutes FULLSCANMINUTES]
+dast_scan-1  |                 [--oauthParameters [OAUTHPARAMETERS ...]]
+dast_scan-1  |                 [--oauthTokenUrl OAUTHTOKENURL]
+dast_scan-1  |                 [--otherOptions [OTHEROPTIONS ...]]
+dast_scan-1  |                 [--outputFormat OUTPUTFORMAT]
+dast_scan-1  |                 [--requestCookies [REQUESTCOOKIES ...]]
+dast_scan-1  |                 [--requestHeaders [REQUESTHEADERS ...]] [--scanMode SCANMODE]
+dast_scan-1  |                 [--apiKey APIKEY] [--apiURL APIURL] [--clientId CLIENTID]
+dast_scan-1  |                 [--integrationName INTEGRATIONNAME]
+dast_scan-1  |                 [--integrationType INTEGRATIONTYPE] [--logLevel LOGLEVEL]
+dast_scan-1  |                 [--scriptVersion SCRIPTVERSION] [--verbose]
+dast_scan-1  |                 targetURL
+dast_scan-1  | 
+dast_scan-1  | SOOS Dast
+dast_scan-1  | 
+dast_scan-1  | positional arguments:
+dast_scan-1  |   targetURL             Target URL - URL of the site or api to scan. The URL
+dast_scan-1  |                         should include the protocol. Ex:
+dast_scan-1  |                         https://www.example.com
+dast_scan-1  | 
+dast_scan-1  | optional arguments:
+dast_scan-1  |   -h, --help            show this help message and exit
+dast_scan-1  |   --appVersion APPVERSION
+dast_scan-1  |                         App Version - Intended for internal use only.
+dast_scan-1  |   --branchName BRANCHNAME
+dast_scan-1  |                         The name of the branch from the SCM System.
+dast_scan-1  |   --branchURI BRANCHURI
+dast_scan-1  |                         The URI to the branch from the SCM System.
+dast_scan-1  |   --buildURI BUILDURI   URI to CI build info.
+dast_scan-1  |   --buildVersion BUILDVERSION
+dast_scan-1  |                         Version of application build artifacts.
+dast_scan-1  |   --commitHash COMMITHASH
+dast_scan-1  |                         The commit hash value from the SCM System.
+dast_scan-1  |   --contributingDeveloperId CONTRIBUTINGDEVELOPERID
+dast_scan-1  |                         Contributing Developer ID - Intended for internal use
+dast_scan-1  |                         only.
+dast_scan-1  |   --contributingDeveloperSource CONTRIBUTINGDEVELOPERSOURCE
+dast_scan-1  |                         Contributing Developer Source - Intended for internal
+dast_scan-1  |                         use only.
+dast_scan-1  |   --contributingDeveloperSourceName CONTRIBUTINGDEVELOPERSOURCENAME
+dast_scan-1  |                         Contributing Developer Source Name - Intended for
+dast_scan-1  |                         internal use only.
+dast_scan-1  |   --onFailure ONFAILURE
+dast_scan-1  |                         Action to perform when the scan fails. Options:
+dast_scan-1  |                         fail_the_build, continue_on_failure.
+dast_scan-1  |   --operatingEnvironment OPERATINGENVIRONMENT
+dast_scan-1  |                         Set Operating environment for information purposes
+dast_scan-1  |                         only.
+dast_scan-1  |   --projectName PROJECTNAME
+dast_scan-1  |                         Project Name - this is what will be displayed in the
+dast_scan-1  |                         SOOS app.
+dast_scan-1  |   --ajaxSpider          Ajax Spider - Use the ajax spider in addition to the
+dast_scan-1  |                         traditional one. Additional information: https://www.z
+dast_scan-1  |                         aproxy.org/docs/desktop/addons/ajax-spider/.
+dast_scan-1  |   --apiScanFormat APISCANFORMAT
+dast_scan-1  |                         Target API format, OpenAPI, SOAP or GraphQL.
+dast_scan-1  |   --authDelayTime AUTHDELAYTIME
+dast_scan-1  |                         Delay time in seconds to wait for the page to load
+dast_scan-1  |                         after performing actions in the form. (Used only on
+dast_scan-1  |                         authFormType: wait_for_password and multi_page)
+dast_scan-1  |   --authFormType AUTHFORMTYPE
+dast_scan-1  |                         Form type of the login URL options are: simple (all
+dast_scan-1  |                         fields are displayed at once), wait_for_password
+dast_scan-1  |                         (Password field is displayed only after username is
+dast_scan-1  |                         filled), or multi_page (Password field is displayed
+dast_scan-1  |                         only after username is filled and submit is clicked).
+dast_scan-1  |   --authLoginURL AUTHLOGINURL
+dast_scan-1  |                         Login URL to use when authentication is required.
+dast_scan-1  |   --authPassword AUTHPASSWORD
+dast_scan-1  |                         Password to use when authentication is required.
+dast_scan-1  |   --authPasswordField AUTHPASSWORDFIELD
+dast_scan-1  |                         Password input id to use when authentication is
+dast_scan-1  |                         required.
+dast_scan-1  |   --authSecondSubmitField AUTHSECONDSUBMITFIELD
+dast_scan-1  |                         Second submit button id to use when authentication is
+dast_scan-1  |                         required.
+dast_scan-1  |   --authSubmitAction AUTHSUBMITACTION
+dast_scan-1  |                         Submit action to perform on form filled. Options:
+dast_scan-1  |                         click or submit.
+dast_scan-1  |   --authSubmitField AUTHSUBMITFIELD
+dast_scan-1  |                         Submit button id to use when authentication is
+dast_scan-1  |                         required.
+dast_scan-1  |   --authUsername AUTHUSERNAME
+dast_scan-1  |                         Username to use when authentication is required.
+dast_scan-1  |   --authUsernameField AUTHUSERNAMEFIELD
+dast_scan-1  |                         Username input id to use when authentication is
+dast_scan-1  |                         required.
+dast_scan-1  |   --authVerificationURL AUTHVERIFICATIONURL
+dast_scan-1  |                         URL used to verify authentication success, should be
+dast_scan-1  |                         an URL that is expected to throw 200/302 during any
+dast_scan-1  |                         authFormType authentication. If authentication fails
+dast_scan-1  |                         when this URL is provided, the scan will be
+dast_scan-1  |                         terminated. Supports plain URL or regex URL.
+dast_scan-1  |   --bearerToken BEARERTOKEN
+dast_scan-1  |                         Bearer token, adds a Authentication header with the
+dast_scan-1  |                         token value.
+dast_scan-1  |   --contextFile [CONTEXTFILE ...]
+dast_scan-1  |                         Context file which will be loaded prior to scanning
+dast_scan-1  |                         the target.
+dast_scan-1  |   --debug               Enable debug logging for ZAP.
+dast_scan-1  |   --disableRules [DISABLERULES ...]
+dast_scan-1  |                         Comma separated list of ZAP rules IDs to disable. List
+dast_scan-1  |                         for reference https://www.zaproxy.org/docs/alerts/
+dast_scan-1  |   --excludeUrlsFile EXCLUDEURLSFILE
+dast_scan-1  |                         Path to a file containing regex URLs to exclude, one
+dast_scan-1  |                         per line.
+dast_scan-1  |   --fullScanMinutes FULLSCANMINUTES
+dast_scan-1  |                         Number of minutes for the spider to run.
+dast_scan-1  |   --oauthParameters [OAUTHPARAMETERS ...]
+dast_scan-1  |                         Parameters to be added to the oauth token request. (eg
+dast_scan-1  |                         --oauthParameters="client_id:clientID,
+dast_scan-1  |                         client_secret:clientSecret,
+dast_scan-1  |                         grant_type:client_credentials").
+dast_scan-1  |   --oauthTokenUrl OAUTHTOKENURL
+dast_scan-1  |                         The authentication URL that grants the access_token.
+dast_scan-1  |   --otherOptions [OTHEROPTIONS ...]
+dast_scan-1  |                         Other command line arguments sent directly to the
+dast_scan-1  |                         script for items not supported by other command line
+dast_scan-1  |                         arguments
+dast_scan-1  |   --outputFormat OUTPUTFORMAT
+dast_scan-1  |                         Output format for vulnerabilities: only the value
+dast_scan-1  |                         SARIF is available at the moment
+dast_scan-1  |   --requestCookies [REQUESTCOOKIES ...]
+dast_scan-1  |                         DEPRECATED. This parameter has no effect.
+dast_scan-1  |   --requestHeaders [REQUESTHEADERS ...]
+dast_scan-1  |                         Set extra headers for the requests to the target URL
+dast_scan-1  |   --scanMode SCANMODE   Scan Mode - Available modes: baseline, fullscan, and
+dast_scan-1  |                         apiscan (for more information about scan modes visit
+dast_scan-1  |                         https://github.com/soos-io/soos-dast#scan-modes)
+dast_scan-1  |   --apiKey APIKEY       SOOS API Key - get yours from
+dast_scan-1  |                         https://app.soos.io/integrate/dast
+dast_scan-1  |   --apiURL APIURL       SOOS API URL - Intended for internal use only, do not
+dast_scan-1  |                         modify.
+dast_scan-1  |   --clientId CLIENTID   SOOS Client ID - get yours from
+dast_scan-1  |                         https://app.soos.io/integrate/dast
+dast_scan-1  |   --integrationName INTEGRATIONNAME
+dast_scan-1  |                         Integration Name - Intended for internal use only.
+dast_scan-1  |   --integrationType INTEGRATIONTYPE
+dast_scan-1  |                         Integration Type - Intended for internal use only.
+dast_scan-1  |   --logLevel LOGLEVEL   Minimum level to show logs: DEBUG, INFO, WARN, FAIL,
+dast_scan-1  |                         ERROR.
+dast_scan-1  |   --scriptVersion SCRIPTVERSION
+dast_scan-1  |                         Script Version - Intended for internal use only.
+dast_scan-1  |   --verbose             DEPRECATED - Change logLevel to DEBUG. This parameter
+dast_scan-1  |                         has no effect.
+===== Logs for done =====
+done-1  | done

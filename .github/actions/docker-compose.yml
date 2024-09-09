@@ -177,38 +177,38 @@ services:
       build:
         condition: service_completed_successfully
 
-  # TODO: not done
-  # dast_scan:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/dast_scan:/action
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/dast_scan:latest
-  #   build:
-  #     context: build/dast_scan
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  # TODO: test please
+  dast_scan:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/dast_scan:/action
+      - /var/run/docker.sock:/var/run/docker.sock
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/dast_scan:latest
+    build:
+      context: build/dast_scan
+    depends_on:
+      build:
+        condition: service_completed_successfully
 
-  # TODO: not done
-  # e2e_test:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/e2e_test:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/cypress_included:latest
-  #   build:
-  #     context: build/cypress_included
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  # TODO: test please
+  e2e_test:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/e2e_test:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/cypress_included:latest
+    build:
+      context: build/cypress_included
+    depends_on:
+      build:
+        condition: service_completed_successfully
 
   done:
     entrypoint: /bin/bash
@@ -227,10 +227,10 @@ services:
         condition: service_completed_successfully
       trivy_scan:
         condition: service_completed_successfully
-    #   e2e_test:
-    #     condition: service_completed_successfully
-    #   dast_scan:
-    #     condition: service_completed_successfully
+      e2e_test:
+        condition: service_completed_successfully
+      dast_scan:
+        condition: service_completed_successfully
 
 volumes:
   workspace:
