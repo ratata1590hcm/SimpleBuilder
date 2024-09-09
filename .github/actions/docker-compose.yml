@@ -77,22 +77,6 @@ services:
       dependency_scan:
         condition: service_completed_successfully
 
-  # TODO: not done
-  # code_coverage:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/code_coverage:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/maven:latest
-  #   build:
-  #     context: build/maven
-  #   depends_on:
-  #     trunk_check:
-  #       condition: service_completed_successfully
-
   # TODO: test please
   # sonar_scan:
   #   entrypoint: /bin/bash
