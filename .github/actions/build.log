@@ -2,9 +2,170 @@
 checkout_source-1  | done
 ===== Logs for dependency_scan =====
 dependency_scan-1  | [INFO] Checking for updates
-dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
-dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
-dependency_scan-1  | [INFO] Check for updates complete (1009 ms)
+dependency_scan-1  | [INFO] NVD API has 262,633 records in this update
+dependency_scan-1  | [INFO] Downloaded 10,000/262,633 (4%)
+dependency_scan-1  | [INFO] Downloaded 20,000/262,633 (8%)
+dependency_scan-1  | [INFO] Downloaded 30,000/262,633 (11%)
+dependency_scan-1  | [INFO] Downloaded 40,000/262,633 (15%)
+dependency_scan-1  | [INFO] Downloaded 50,000/262,633 (19%)
+dependency_scan-1  | [INFO] Downloaded 60,000/262,633 (23%)
+dependency_scan-1  | [INFO] Downloaded 70,000/262,633 (27%)
+dependency_scan-1  | [INFO] Downloaded 80,000/262,633 (30%)
+dependency_scan-1  | [INFO] Downloaded 90,000/262,633 (34%)
+dependency_scan-1  | [INFO] Downloaded 100,000/262,633 (38%)
+dependency_scan-1  | [INFO] Downloaded 110,000/262,633 (42%)
+dependency_scan-1  | [INFO] Downloaded 120,000/262,633 (46%)
+dependency_scan-1  | [INFO] Downloaded 130,000/262,633 (49%)
+dependency_scan-1  | [INFO] Downloaded 140,000/262,633 (53%)
+dependency_scan-1  | [INFO] Downloaded 150,000/262,633 (57%)
+dependency_scan-1  | [INFO] Downloaded 160,000/262,633 (61%)
+dependency_scan-1  | [INFO] Downloaded 170,000/262,633 (65%)
+dependency_scan-1  | [INFO] Downloaded 180,000/262,633 (69%)
+dependency_scan-1  | [INFO] Downloaded 190,000/262,633 (72%)
+dependency_scan-1  | [INFO] Downloaded 200,000/262,633 (76%)
+dependency_scan-1  | [INFO] Downloaded 210,000/262,633 (80%)
+dependency_scan-1  | [INFO] Downloaded 220,000/262,633 (84%)
+dependency_scan-1  | [INFO] Downloaded 230,000/262,633 (88%)
+dependency_scan-1  | [INFO] Downloaded 240,000/262,633 (91%)
+dependency_scan-1  | [INFO] Downloaded 250,000/262,633 (95%)
+dependency_scan-1  | [INFO] Downloaded 260,000/262,633 (99%)
+dependency_scan-1  | [INFO] Downloaded 262,633/262,633 (100%)
+dependency_scan-1  | [INFO] Completed processing batch 1/132 (1%) in 2,451ms
+dependency_scan-1  | [INFO] Completed processing batch 2/132 (2%) in 1,586ms
+dependency_scan-1  | [INFO] Completed processing batch 3/132 (2%) in 2,252ms
+dependency_scan-1  | [INFO] Completed processing batch 4/132 (3%) in 2,106ms
+dependency_scan-1  | [INFO] Completed processing batch 5/132 (4%) in 2,361ms
+dependency_scan-1  | [INFO] Completed processing batch 6/132 (5%) in 1,766ms
+dependency_scan-1  | [INFO] Completed processing batch 7/132 (5%) in 1,464ms
+dependency_scan-1  | [INFO] Completed processing batch 8/132 (6%) in 1,269ms
+dependency_scan-1  | [INFO] Completed processing batch 9/132 (7%) in 909ms
+dependency_scan-1  | [INFO] Completed processing batch 10/132 (8%) in 1,071ms
+dependency_scan-1  | [INFO] Completed processing batch 11/132 (8%) in 1,171ms
+dependency_scan-1  | [INFO] Completed processing batch 12/132 (9%) in 968ms
+dependency_scan-1  | [INFO] Completed processing batch 13/132 (10%) in 1,071ms
+dependency_scan-1  | [INFO] Completed processing batch 14/132 (11%) in 1,175ms
+dependency_scan-1  | [INFO] Completed processing batch 15/132 (11%) in 1,339ms
+dependency_scan-1  | [INFO] Completed processing batch 16/132 (12%) in 1,427ms
+dependency_scan-1  | [INFO] Completed processing batch 17/132 (13%) in 1,146ms
+dependency_scan-1  | [INFO] Completed processing batch 18/132 (14%) in 1,644ms
+dependency_scan-1  | [INFO] Completed processing batch 19/132 (14%) in 1,690ms
+dependency_scan-1  | [INFO] Completed processing batch 20/132 (15%) in 1,484ms
+dependency_scan-1  | [INFO] Completed processing batch 21/132 (16%) in 1,435ms
+dependency_scan-1  | [INFO] Completed processing batch 22/132 (17%) in 1,548ms
+dependency_scan-1  | [INFO] Completed processing batch 23/132 (17%) in 2,337ms
+dependency_scan-1  | [INFO] Completed processing batch 24/132 (18%) in 1,989ms
+dependency_scan-1  | [INFO] Completed processing batch 25/132 (19%) in 1,984ms
+dependency_scan-1  | [INFO] Completed processing batch 26/132 (20%) in 1,638ms
+dependency_scan-1  | [INFO] Completed processing batch 27/132 (20%) in 2,136ms
+dependency_scan-1  | [INFO] Completed processing batch 28/132 (21%) in 1,948ms
+dependency_scan-1  | [INFO] Completed processing batch 29/132 (22%) in 3,400ms
+dependency_scan-1  | [INFO] Completed processing batch 30/132 (23%) in 1,862ms
+dependency_scan-1  | [INFO] Completed processing batch 31/132 (23%) in 1,755ms
+dependency_scan-1  | [INFO] Completed processing batch 32/132 (24%) in 1,509ms
+dependency_scan-1  | [INFO] Completed processing batch 33/132 (25%) in 926ms
+dependency_scan-1  | [INFO] Completed processing batch 34/132 (26%) in 905ms
+dependency_scan-1  | [INFO] Completed processing batch 35/132 (27%) in 1,282ms
+dependency_scan-1  | [INFO] Completed processing batch 36/132 (27%) in 1,953ms
+dependency_scan-1  | [INFO] Completed processing batch 37/132 (28%) in 286ms
+dependency_scan-1  | [INFO] Completed processing batch 38/132 (29%) in 1,093ms
+dependency_scan-1  | [INFO] Completed processing batch 39/132 (30%) in 768ms
+dependency_scan-1  | [INFO] Completed processing batch 40/132 (30%) in 1,240ms
+dependency_scan-1  | [INFO] Completed processing batch 41/132 (31%) in 1,152ms
+dependency_scan-1  | [INFO] Completed processing batch 42/132 (32%) in 1,069ms
+dependency_scan-1  | [INFO] Completed processing batch 43/132 (33%) in 925ms
+dependency_scan-1  | [INFO] Completed processing batch 44/132 (33%) in 684ms
+dependency_scan-1  | [INFO] Completed processing batch 45/132 (34%) in 1,054ms
+dependency_scan-1  | [INFO] Completed processing batch 46/132 (35%) in 385ms
+dependency_scan-1  | [INFO] Completed processing batch 47/132 (36%) in 1,023ms
+dependency_scan-1  | [INFO] Completed processing batch 48/132 (36%) in 228ms
+dependency_scan-1  | [INFO] Completed processing batch 49/132 (37%) in 932ms
+dependency_scan-1  | [INFO] Completed processing batch 50/132 (38%) in 950ms
+dependency_scan-1  | [INFO] Completed processing batch 51/132 (39%) in 666ms
+dependency_scan-1  | [INFO] Completed processing batch 52/132 (39%) in 706ms
+dependency_scan-1  | [INFO] Completed processing batch 53/132 (40%) in 500ms
+dependency_scan-1  | [INFO] Completed processing batch 54/132 (41%) in 602ms
+dependency_scan-1  | [INFO] Completed processing batch 55/132 (42%) in 732ms
+dependency_scan-1  | [INFO] Completed processing batch 56/132 (42%) in 822ms
+dependency_scan-1  | [INFO] Completed processing batch 57/132 (43%) in 938ms
+dependency_scan-1  | [INFO] Completed processing batch 58/132 (44%) in 965ms
+dependency_scan-1  | [INFO] Completed processing batch 59/132 (45%) in 761ms
+dependency_scan-1  | [INFO] Completed processing batch 60/132 (45%) in 738ms
+dependency_scan-1  | [INFO] Completed processing batch 61/132 (46%) in 730ms
+dependency_scan-1  | [INFO] Completed processing batch 62/132 (47%) in 639ms
+dependency_scan-1  | [INFO] Completed processing batch 63/132 (48%) in 895ms
+dependency_scan-1  | [INFO] Completed processing batch 64/132 (48%) in 581ms
+dependency_scan-1  | [INFO] Completed processing batch 65/132 (49%) in 750ms
+dependency_scan-1  | [INFO] Completed processing batch 66/132 (50%) in 750ms
+dependency_scan-1  | [INFO] Completed processing batch 67/132 (51%) in 715ms
+dependency_scan-1  | [INFO] Completed processing batch 68/132 (52%) in 616ms
+dependency_scan-1  | [INFO] Completed processing batch 69/132 (52%) in 848ms
+dependency_scan-1  | [INFO] Completed processing batch 70/132 (53%) in 995ms
+dependency_scan-1  | [INFO] Completed processing batch 71/132 (54%) in 623ms
+dependency_scan-1  | [INFO] Completed processing batch 72/132 (55%) in 621ms
+dependency_scan-1  | [INFO] Completed processing batch 73/132 (55%) in 640ms
+dependency_scan-1  | [INFO] Completed processing batch 74/132 (56%) in 600ms
+dependency_scan-1  | [INFO] Completed processing batch 75/132 (57%) in 1,200ms
+dependency_scan-1  | [INFO] Completed processing batch 76/132 (58%) in 777ms
+dependency_scan-1  | [INFO] Completed processing batch 77/132 (58%) in 618ms
+dependency_scan-1  | [INFO] Completed processing batch 78/132 (59%) in 730ms
+dependency_scan-1  | [INFO] Completed processing batch 79/132 (60%) in 742ms
+dependency_scan-1  | [INFO] Completed processing batch 80/132 (61%) in 700ms
+dependency_scan-1  | [INFO] Completed processing batch 81/132 (61%) in 626ms
+dependency_scan-1  | [INFO] Completed processing batch 82/132 (62%) in 643ms
+dependency_scan-1  | [INFO] Completed processing batch 83/132 (63%) in 671ms
+dependency_scan-1  | [INFO] Completed processing batch 84/132 (64%) in 800ms
+dependency_scan-1  | [INFO] Completed processing batch 85/132 (64%) in 633ms
+dependency_scan-1  | [INFO] Completed processing batch 86/132 (65%) in 673ms
+dependency_scan-1  | [INFO] Completed processing batch 87/132 (66%) in 612ms
+dependency_scan-1  | [INFO] Completed processing batch 88/132 (67%) in 566ms
+dependency_scan-1  | [INFO] Completed processing batch 89/132 (67%) in 675ms
+dependency_scan-1  | [INFO] Completed processing batch 90/132 (68%) in 1,146ms
+dependency_scan-1  | [INFO] Completed processing batch 91/132 (69%) in 639ms
+dependency_scan-1  | [INFO] Completed processing batch 92/132 (70%) in 1,385ms
+dependency_scan-1  | [INFO] Completed processing batch 93/132 (70%) in 717ms
+dependency_scan-1  | [INFO] Completed processing batch 94/132 (71%) in 1,052ms
+dependency_scan-1  | [INFO] Completed processing batch 95/132 (72%) in 702ms
+dependency_scan-1  | [INFO] Completed processing batch 96/132 (73%) in 845ms
+dependency_scan-1  | [INFO] Completed processing batch 97/132 (73%) in 733ms
+dependency_scan-1  | [INFO] Completed processing batch 98/132 (74%) in 669ms
+dependency_scan-1  | [INFO] Completed processing batch 99/132 (75%) in 2,298ms
+dependency_scan-1  | [INFO] Completed processing batch 100/132 (76%) in 700ms
+dependency_scan-1  | [INFO] Completed processing batch 101/132 (77%) in 733ms
+dependency_scan-1  | [INFO] Completed processing batch 102/132 (77%) in 738ms
+dependency_scan-1  | [INFO] Completed processing batch 103/132 (78%) in 663ms
+dependency_scan-1  | [INFO] Completed processing batch 104/132 (79%) in 672ms
+dependency_scan-1  | [INFO] Completed processing batch 105/132 (80%) in 773ms
+dependency_scan-1  | [INFO] Completed processing batch 106/132 (80%) in 482ms
+dependency_scan-1  | [INFO] Completed processing batch 107/132 (81%) in 630ms
+dependency_scan-1  | [INFO] Completed processing batch 108/132 (82%) in 623ms
+dependency_scan-1  | [INFO] Completed processing batch 109/132 (83%) in 1,155ms
+dependency_scan-1  | [INFO] Completed processing batch 110/132 (83%) in 98ms
+dependency_scan-1  | [INFO] Completed processing batch 111/132 (84%) in 302ms
+dependency_scan-1  | [INFO] Completed processing batch 112/132 (85%) in 683ms
+dependency_scan-1  | [INFO] Completed processing batch 113/132 (86%) in 460ms
+dependency_scan-1  | [INFO] Completed processing batch 114/132 (86%) in 547ms
+dependency_scan-1  | [INFO] Completed processing batch 115/132 (87%) in 420ms
+dependency_scan-1  | [INFO] Completed processing batch 116/132 (88%) in 682ms
+dependency_scan-1  | [INFO] Completed processing batch 117/132 (89%) in 559ms
+dependency_scan-1  | [INFO] Completed processing batch 118/132 (89%) in 89ms
+dependency_scan-1  | [INFO] Completed processing batch 119/132 (90%) in 497ms
+dependency_scan-1  | [INFO] Completed processing batch 120/132 (91%) in 77ms
+dependency_scan-1  | [INFO] Completed processing batch 121/132 (92%) in 177ms
+dependency_scan-1  | [INFO] Completed processing batch 122/132 (92%) in 598ms
+dependency_scan-1  | [INFO] Completed processing batch 123/132 (93%) in 360ms
+dependency_scan-1  | [INFO] Completed processing batch 124/132 (94%) in 78ms
+dependency_scan-1  | [INFO] Completed processing batch 125/132 (95%) in 753ms
+dependency_scan-1  | [INFO] Completed processing batch 126/132 (95%) in 355ms
+dependency_scan-1  | [INFO] Completed processing batch 127/132 (96%) in 678ms
+dependency_scan-1  | [INFO] Completed processing batch 128/132 (97%) in 704ms
+dependency_scan-1  | [INFO] Completed processing batch 129/132 (98%) in 58ms
+dependency_scan-1  | [INFO] Completed processing batch 130/132 (98%) in 101ms
+dependency_scan-1  | [INFO] Completed processing batch 131/132 (99%) in 107ms
+dependency_scan-1  | [INFO] Completed processing batch 132/132 (100%) in 513ms
+dependency_scan-1  | [INFO] Updating CISA Known Exploited Vulnerability list: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+dependency_scan-1  | [INFO] Begin database defrag
+dependency_scan-1  | [INFO] End database defrag (23976 ms)
+dependency_scan-1  | [INFO] Check for updates complete (946660 ms)
 dependency_scan-1  | [INFO] 
 dependency_scan-1  | 
 dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
@@ -22,7 +183,7 @@ dependency_scan-1  | [INFO] Finished Dependency Merging Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Hint Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Version Filter Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Created CPE Index (2 seconds)
-dependency_scan-1  | [INFO] Finished CPE Analyzer (2 seconds)
+dependency_scan-1  | [INFO] Finished CPE Analyzer (3 seconds)
 dependency_scan-1  | [INFO] Finished False Positive Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished NVD CVE Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Sonatype OSS Index Analyzer (0 seconds)
@@ -30,7 +191,7 @@ dependency_scan-1  | [INFO] Finished Vulnerability Suppression Analyzer (0 secon
 dependency_scan-1  | [INFO] Finished Known Exploited Vulnerability Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Dependency Bundling Analyzer (0 seconds)
 dependency_scan-1  | [INFO] Finished Unused Suppression Rule Analyzer (0 seconds)
-dependency_scan-1  | [INFO] Analysis Complete (2 seconds)
+dependency_scan-1  | [INFO] Analysis Complete (3 seconds)
 dependency_scan-1  | [INFO] Writing XML report to: /workspace/./report/dependency-check-report.xml
 dependency_scan-1  | [INFO] Writing HTML report to: /workspace/./report/dependency-check-report.html
 dependency_scan-1  | [INFO] Writing JSON report to: /workspace/./report/dependency-check-report.json
@@ -43,327 +204,186 @@ dependency_scan-1  | dependency check passed!
 ===== Logs for trunk_check =====
 trunk_check-1  | Trunk is already initialized.
 trunk_check-1  | Running Trunk check...
+trunk_check-1  | ⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⢿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣻ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣽ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣾ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣷ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣯ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⣟ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K⡿ Downloading Trunk 1.22.2...
+trunk_check-1  | [1F[0K[0;32m✔[0m Downloading Trunk 1.22.2... done
+trunk_check-1  | ⡿ Unpacking Trunk...
+trunk_check-1  | [1F[0K[0;32m✔[0m Unpacking Trunk... done
+trunk_check-1  | 
+trunk_check-1  |   AUTOFIXES  
+trunk_check-1  | 
+trunk_check-1  | [1m[4m.github/actions/.env
+trunk_check-1  | [0m[1m[90m 1:1[0m[31m  high[0m  Incorrect formatting[1m[90m  
+trunk_check-1  | [0m
+trunk_check-1  | [90m    | [0m[32mNVD_APIKEY=b62df746-4805-47fb-b24c-ceadcb9c1ed3
+trunk_check-1  | [0m[90m  1 | [0mREGISTRY_HOST=localhost:5000/
+trunk_check-1  | [90m  2 | [0mREGISTRY_NAMESPACE=library
+trunk_check-1  | [90m  3 | [0m[31mNVD_APIKEY=b62df746-4805-47fb-b24c-ceadcb9c1ed3[0m
+trunk_check-1  | 
+trunk_check-1  | 
+trunk_check-1  |   ISSUES  
+trunk_check-1  | 
+trunk_check-1  | .github/actions/.env
+trunk_check-1  |  -:-  fmt  Incorrect formatting, autoformat by running 'trunk fmt'  dotenv-linter
 trunk_check-1  | 
 trunk_check-1  | Checked 54 files
-trunk_check-1  | ✔ No issues
+trunk_check-1  | ✖ 1 unformatted file
 ===== Logs for sonarlint =====
-sonarlint-1  | /workspace
-sonarlint-1  | INFO: Java 1.8.0_161 Oracle Corporation (64-bit)
-sonarlint-1  | INFO: Linux 6.1.0-25-amd64 amd64
-sonarlint-1  | INFO: Standalone mode
-sonarlint-1  | INFO: Index files
-sonarlint-1  | INFO: 6 files indexed
-sonarlint-1  | INFO: Configured Java source version (sonar.java.source): none
-sonarlint-1  | INFO: JavaClasspath initialization
-sonarlint-1  | INFO: Bytecode of dependencies was not provided for analysis of source files, you might end up with less precise results. Bytecode can be provided using sonar.java.libraries property
-sonarlint-1  | INFO: JavaClasspath initialization (done) | time=1ms
-sonarlint-1  | INFO: JavaTestClasspath initialization
-sonarlint-1  | INFO: JavaTestClasspath initialization (done) | time=0ms
-sonarlint-1  | INFO: Java Main Files AST scan
-sonarlint-1  | INFO: 1 source files to be analyzed
-sonarlint-1  | INFO: Java Main Files AST scan (done) | time=428ms
-sonarlint-1  | INFO: 1/1 source files have been analyzed
-sonarlint-1  | INFO: Java Test Files AST scan
-sonarlint-1  | INFO: 0 source files to be analyzed
-sonarlint-1  | INFO: Java Test Files AST scan (done) | time=0ms
-sonarlint-1  | INFO: 0/0 source files have been analyzed
-sonarlint-1  | INFO: 1 source files to be analyzed
-sonarlint-1  | INFO: 1/1 source files have been analyzed
-sonarlint-1  | INFO: 
-sonarlint-1  | 
-sonarlint-1  | -------------  SonarLint Report  -------------
-sonarlint-1  | 
-sonarlint-1  |   No issues to display (6 files analyzed)
-sonarlint-1  | 
-sonarlint-1  | -------------------------------------------
-sonarlint-1  | 
-sonarlint-1  | 
-sonarlint-1  | INFO: SonarLint HTML Report generated: /workspace/source_code/.sonarlint/sonarlint-report.html
-sonarlint-1  | INFO: ------------------------------------------------------------------------
-sonarlint-1  | INFO: EXECUTION SUCCESS
-sonarlint-1  | INFO: ------------------------------------------------------------------------
-sonarlint-1  | INFO: Total time: 1.723s
-sonarlint-1  | INFO: Final Memory: 9M/413M
-sonarlint-1  | INFO: ------------------------------------------------------------------------
-sonarlint-1  | No issues found by SonarLint.
 ===== Logs for build =====
-build-1  | --progress is a global compose flag, better use `docker compose --progress xx build ...
-build-1  | #0 building with "default" instance using docker driver
-build-1  | 
-build-1  | #1 [java_latest internal] load build definition from Dockerfile
-build-1  | #1 transferring dockerfile: 459B done
-build-1  | #1 DONE 0.1s
-build-1  | 
-build-1  | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
-build-1  | #2 ...
-build-1  | 
-build-1  | #3 [java_latest internal] load metadata for docker.io/library/openjdk:21
-build-1  | #3 DONE 2.1s
-build-1  | 
-build-1  | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
-build-1  | #2 DONE 2.1s
-build-1  | 
-build-1  | #4 [java_latest internal] load .dockerignore
-build-1  | #4 transferring context: 2B done
-build-1  | #4 DONE 0.1s
-build-1  | 
-build-1  | #5 [java_latest stage-1 1/3] FROM docker.io/library/openjdk:21@sha256:af9de795d1f8d3b6172f6c55ca9ba1c5768baa11bb2dc8af7045c7db9d4c33ac
-build-1  | #5 DONE 0.0s
-build-1  | 
-build-1  | #6 [java_latest build 1/7] FROM docker.io/library/maven:3.9.8-eclipse-temurin-21@sha256:de18e4e51396ad9266f76669779ed6d6b49fbb0f45ed6f39169d87378d548d7d
-build-1  | #6 DONE 0.0s
-build-1  | 
-build-1  | #7 [java_latest internal] load build context
-build-1  | #7 transferring context: 4.05kB done
-build-1  | #7 DONE 0.1s
-build-1  | 
-build-1  | #8 [java_latest build 4/7] COPY .m2 .
-build-1  | #8 CACHED
-build-1  | 
-build-1  | #9 [java_latest build 5/7] RUN mvn dependency:go-offline
-build-1  | #9 CACHED
-build-1  | 
-build-1  | #10 [java_latest build 7/7] RUN mvn clean package
-build-1  | #10 CACHED
-build-1  | 
-build-1  | #11 [java_latest stage-1 2/3] WORKDIR /app
-build-1  | #11 CACHED
-build-1  | 
-build-1  | #12 [java_latest build 3/7] COPY pom.xml .
-build-1  | #12 CACHED
-build-1  | 
-build-1  | #13 [java_latest build 6/7] COPY . .
-build-1  | #13 CACHED
-build-1  | 
-build-1  | #14 [java_latest build 2/7] WORKDIR /app
-build-1  | #14 CACHED
-build-1  | 
-build-1  | #15 [java_latest stage-1 3/3] COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
-build-1  | #15 CACHED
-build-1  | 
-build-1  | #16 [java_latest] exporting to image
-build-1  | #16 exporting layers done
-build-1  | #16 writing image sha256:813639cb08625e1fd5ccdcbde85476538772bef621879bbf171c5298a08b3575 done
-build-1  | #16 naming to localhost:5000/library/app:latest done
-build-1  | #16 DONE 0.0s
-build-1  | 
-build-1  | #17 [java_latest] resolving provenance for metadata file
-build-1  | #17 DONE 0.0s
-===== Logs for e2e_test =====
-e2e_test-1  | Usage: cypress run [options]
-e2e_test-1  | 
-e2e_test-1  | Runs Cypress tests from the CLI without the GUI
-e2e_test-1  | 
-e2e_test-1  | Options:
-e2e_test-1  |   --auto-cancel-after-failures <test-failure-count || false>  overrides the project-level Cloud configuration to set the failed test threshold for auto cancellation or to disable auto cancellation when recording to the Cloud
-e2e_test-1  |   -b, --browser <browser-name-or-path>                        runs Cypress in the browser with the given name. if a filesystem path is supplied, Cypress will attempt to use the browser at that path.
-e2e_test-1  |   --ci-build-id <id>                                          the unique identifier for a run on your CI provider. typically a "BUILD_ID" env var. this value is automatically detected for most CI providers
-e2e_test-1  |   --component                                                 runs component tests
-e2e_test-1  |   -c, --config <config>                                       sets configuration values. separate multiple values with a comma. overrides any value in cypress.config.{js,ts,mjs,cjs}.
-e2e_test-1  |   -C, --config-file <config-file>                             path to script file where configuration values are set. defaults to "cypress.config.{js,ts,mjs,cjs}".
-e2e_test-1  |   --e2e                                                       runs end to end tests
-e2e_test-1  |   -e, --env <env>                                             sets environment variables. separate multiple values with a comma. overrides any value in cypress.config.{js,ts,mjs,cjs} or cypress.env.json
-e2e_test-1  |   --group <name>                                              a named group for recorded runs in Cypress Cloud
-e2e_test-1  |   -k, --key <record-key>                                      your secret Record Key. you can omit this if you set a CYPRESS_RECORD_KEY environment variable.
-e2e_test-1  |   --headed                                                    displays the browser instead of running headlessly
-e2e_test-1  |   --headless                                                  hide the browser instead of running headed (default for cypress run)
-e2e_test-1  |   --no-exit                                                   keep the browser open after tests finish
-e2e_test-1  |   --parallel                                                  enables concurrent runs and automatic load balancing of specs across multiple machines or processes
-e2e_test-1  |   -p, --port <port>                                           runs Cypress on a specific port. overrides any value in cypress.config.{js,ts,mjs,cjs}.
-e2e_test-1  |   -P, --project <project-path>                                path to the project
-e2e_test-1  |   -q, --quiet                                                 run quietly, using only the configured reporter
-e2e_test-1  |   --record [bool]                                             records the run. sends test results, screenshots and videos to Cypress Cloud.
-e2e_test-1  |   -r, --reporter <reporter>                                   runs a specific mocha reporter. pass a path to use a custom reporter. defaults to "spec"
-e2e_test-1  |   --runner-ui                                                 displays the Cypress Runner UI
-e2e_test-1  |   --no-runner-ui                                              hides the Cypress Runner UI
-e2e_test-1  |   -o, --reporter-options <reporter-options>                   options for the mocha reporter. defaults to "null"
-e2e_test-1  |   -s, --spec <spec>                                           runs specific spec file(s). defaults to "all"
-e2e_test-1  |   -t, --tag <tag>                                             named tag(s) for recorded runs in Cypress Cloud
-e2e_test-1  |   --dev                                                       runs cypress in development and bypasses binary check
-e2e_test-1  |   -h, --help                                                  display help for command
-===== Logs for performance_test =====
-performance_test-1  | Sep 09, 2024 1:28:57 PM java.util.prefs.FileSystemPreferences$1 run
-performance_test-1  | INFO: Created user preferences directory.
-performance_test-1  |     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____
-performance_test-1  |    / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \
-performance_test-1  |   / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) |
-performance_test-1  |  / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <
-performance_test-1  | /_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 5.5
-performance_test-1  | 
-performance_test-1  | Copyright (c) 1999-2022 The Apache Software Foundation
-performance_test-1  | 
 ===== Logs for trivy_scan =====
-trivy_scan-1  | Version: 0.54.0
 ===== Logs for dast_scan =====
-dast_scan-1  | 2024-09-09 11:28:56 AM UTC [INFO] Starting SOOS DAST Analysis
-dast_scan-1  | --------------------------------------------------------------------------------
-dast_scan-1  | 
-dast_scan-1  | 2024-09-09 11:28:56 AM UTC [INFO] Parsing arguments
-dast_scan-1  | usage: index.js [-h] [--appVersion APPVERSION] [--branchName BRANCHNAME]
-dast_scan-1  |                 [--branchURI BRANCHURI] [--buildURI BUILDURI]
-dast_scan-1  |                 [--buildVersion BUILDVERSION] [--commitHash COMMITHASH]
-dast_scan-1  |                 [--contributingDeveloperId CONTRIBUTINGDEVELOPERID]
-dast_scan-1  |                 [--contributingDeveloperSource CONTRIBUTINGDEVELOPERSOURCE]
-dast_scan-1  |                 [--contributingDeveloperSourceName CONTRIBUTINGDEVELOPERSOURCENAME]
-dast_scan-1  |                 [--onFailure ONFAILURE]
-dast_scan-1  |                 [--operatingEnvironment OPERATINGENVIRONMENT] --projectName
-dast_scan-1  |                 PROJECTNAME [--ajaxSpider] [--apiScanFormat APISCANFORMAT]
-dast_scan-1  |                 [--authDelayTime AUTHDELAYTIME] [--authFormType AUTHFORMTYPE]
-dast_scan-1  |                 [--authLoginURL AUTHLOGINURL] [--authPassword AUTHPASSWORD]
-dast_scan-1  |                 [--authPasswordField AUTHPASSWORDFIELD]
-dast_scan-1  |                 [--authSecondSubmitField AUTHSECONDSUBMITFIELD]
-dast_scan-1  |                 [--authSubmitAction AUTHSUBMITACTION]
-dast_scan-1  |                 [--authSubmitField AUTHSUBMITFIELD]
-dast_scan-1  |                 [--authUsername AUTHUSERNAME]
-dast_scan-1  |                 [--authUsernameField AUTHUSERNAMEFIELD]
-dast_scan-1  |                 [--authVerificationURL AUTHVERIFICATIONURL]
-dast_scan-1  |                 [--bearerToken BEARERTOKEN] [--contextFile [CONTEXTFILE ...]]
-dast_scan-1  |                 [--debug] [--disableRules [DISABLERULES ...]]
-dast_scan-1  |                 [--excludeUrlsFile EXCLUDEURLSFILE]
-dast_scan-1  |                 [--fullScanMinutes FULLSCANMINUTES]
-dast_scan-1  |                 [--oauthParameters [OAUTHPARAMETERS ...]]
-dast_scan-1  |                 [--oauthTokenUrl OAUTHTOKENURL]
-dast_scan-1  |                 [--otherOptions [OTHEROPTIONS ...]]
-dast_scan-1  |                 [--outputFormat OUTPUTFORMAT]
-dast_scan-1  |                 [--requestCookies [REQUESTCOOKIES ...]]
-dast_scan-1  |                 [--requestHeaders [REQUESTHEADERS ...]] [--scanMode SCANMODE]
-dast_scan-1  |                 [--apiKey APIKEY] [--apiURL APIURL] [--clientId CLIENTID]
-dast_scan-1  |                 [--integrationName INTEGRATIONNAME]
-dast_scan-1  |                 [--integrationType INTEGRATIONTYPE] [--logLevel LOGLEVEL]
-dast_scan-1  |                 [--scriptVersion SCRIPTVERSION] [--verbose]
-dast_scan-1  |                 targetURL
-dast_scan-1  | 
-dast_scan-1  | SOOS Dast
-dast_scan-1  | 
-dast_scan-1  | positional arguments:
-dast_scan-1  |   targetURL             Target URL - URL of the site or api to scan. The URL
-dast_scan-1  |                         should include the protocol. Ex:
-dast_scan-1  |                         https://www.example.com
-dast_scan-1  | 
-dast_scan-1  | optional arguments:
-dast_scan-1  |   -h, --help            show this help message and exit
-dast_scan-1  |   --appVersion APPVERSION
-dast_scan-1  |                         App Version - Intended for internal use only.
-dast_scan-1  |   --branchName BRANCHNAME
-dast_scan-1  |                         The name of the branch from the SCM System.
-dast_scan-1  |   --branchURI BRANCHURI
-dast_scan-1  |                         The URI to the branch from the SCM System.
-dast_scan-1  |   --buildURI BUILDURI   URI to CI build info.
-dast_scan-1  |   --buildVersion BUILDVERSION
-dast_scan-1  |                         Version of application build artifacts.
-dast_scan-1  |   --commitHash COMMITHASH
-dast_scan-1  |                         The commit hash value from the SCM System.
-dast_scan-1  |   --contributingDeveloperId CONTRIBUTINGDEVELOPERID
-dast_scan-1  |                         Contributing Developer ID - Intended for internal use
-dast_scan-1  |                         only.
-dast_scan-1  |   --contributingDeveloperSource CONTRIBUTINGDEVELOPERSOURCE
-dast_scan-1  |                         Contributing Developer Source - Intended for internal
-dast_scan-1  |                         use only.
-dast_scan-1  |   --contributingDeveloperSourceName CONTRIBUTINGDEVELOPERSOURCENAME
-dast_scan-1  |                         Contributing Developer Source Name - Intended for
-dast_scan-1  |                         internal use only.
-dast_scan-1  |   --onFailure ONFAILURE
-dast_scan-1  |                         Action to perform when the scan fails. Options:
-dast_scan-1  |                         fail_the_build, continue_on_failure.
-dast_scan-1  |   --operatingEnvironment OPERATINGENVIRONMENT
-dast_scan-1  |                         Set Operating environment for information purposes
-dast_scan-1  |                         only.
-dast_scan-1  |   --projectName PROJECTNAME
-dast_scan-1  |                         Project Name - this is what will be displayed in the
-dast_scan-1  |                         SOOS app.
-dast_scan-1  |   --ajaxSpider          Ajax Spider - Use the ajax spider in addition to the
-dast_scan-1  |                         traditional one. Additional information: https://www.z
-dast_scan-1  |                         aproxy.org/docs/desktop/addons/ajax-spider/.
-dast_scan-1  |   --apiScanFormat APISCANFORMAT
-dast_scan-1  |                         Target API format, OpenAPI, SOAP or GraphQL.
-dast_scan-1  |   --authDelayTime AUTHDELAYTIME
-dast_scan-1  |                         Delay time in seconds to wait for the page to load
-dast_scan-1  |                         after performing actions in the form. (Used only on
-dast_scan-1  |                         authFormType: wait_for_password and multi_page)
-dast_scan-1  |   --authFormType AUTHFORMTYPE
-dast_scan-1  |                         Form type of the login URL options are: simple (all
-dast_scan-1  |                         fields are displayed at once), wait_for_password
-dast_scan-1  |                         (Password field is displayed only after username is
-dast_scan-1  |                         filled), or multi_page (Password field is displayed
-dast_scan-1  |                         only after username is filled and submit is clicked).
-dast_scan-1  |   --authLoginURL AUTHLOGINURL
-dast_scan-1  |                         Login URL to use when authentication is required.
-dast_scan-1  |   --authPassword AUTHPASSWORD
-dast_scan-1  |                         Password to use when authentication is required.
-dast_scan-1  |   --authPasswordField AUTHPASSWORDFIELD
-dast_scan-1  |                         Password input id to use when authentication is
-dast_scan-1  |                         required.
-dast_scan-1  |   --authSecondSubmitField AUTHSECONDSUBMITFIELD
-dast_scan-1  |                         Second submit button id to use when authentication is
-dast_scan-1  |                         required.
-dast_scan-1  |   --authSubmitAction AUTHSUBMITACTION
-dast_scan-1  |                         Submit action to perform on form filled. Options:
-dast_scan-1  |                         click or submit.
-dast_scan-1  |   --authSubmitField AUTHSUBMITFIELD
-dast_scan-1  |                         Submit button id to use when authentication is
-dast_scan-1  |                         required.
-dast_scan-1  |   --authUsername AUTHUSERNAME
-dast_scan-1  |                         Username to use when authentication is required.
-dast_scan-1  |   --authUsernameField AUTHUSERNAMEFIELD
-dast_scan-1  |                         Username input id to use when authentication is
-dast_scan-1  |                         required.
-dast_scan-1  |   --authVerificationURL AUTHVERIFICATIONURL
-dast_scan-1  |                         URL used to verify authentication success, should be
-dast_scan-1  |                         an URL that is expected to throw 200/302 during any
-dast_scan-1  |                         authFormType authentication. If authentication fails
-dast_scan-1  |                         when this URL is provided, the scan will be
-dast_scan-1  |                         terminated. Supports plain URL or regex URL.
-dast_scan-1  |   --bearerToken BEARERTOKEN
-dast_scan-1  |                         Bearer token, adds a Authentication header with the
-dast_scan-1  |                         token value.
-dast_scan-1  |   --contextFile [CONTEXTFILE ...]
-dast_scan-1  |                         Context file which will be loaded prior to scanning
-dast_scan-1  |                         the target.
-dast_scan-1  |   --debug               Enable debug logging for ZAP.
-dast_scan-1  |   --disableRules [DISABLERULES ...]
-dast_scan-1  |                         Comma separated list of ZAP rules IDs to disable. List
-dast_scan-1  |                         for reference https://www.zaproxy.org/docs/alerts/
-dast_scan-1  |   --excludeUrlsFile EXCLUDEURLSFILE
-dast_scan-1  |                         Path to a file containing regex URLs to exclude, one
-dast_scan-1  |                         per line.
-dast_scan-1  |   --fullScanMinutes FULLSCANMINUTES
-dast_scan-1  |                         Number of minutes for the spider to run.
-dast_scan-1  |   --oauthParameters [OAUTHPARAMETERS ...]
-dast_scan-1  |                         Parameters to be added to the oauth token request. (eg
-dast_scan-1  |                         --oauthParameters="client_id:clientID,
-dast_scan-1  |                         client_secret:clientSecret,
-dast_scan-1  |                         grant_type:client_credentials").
-dast_scan-1  |   --oauthTokenUrl OAUTHTOKENURL
-dast_scan-1  |                         The authentication URL that grants the access_token.
-dast_scan-1  |   --otherOptions [OTHEROPTIONS ...]
-dast_scan-1  |                         Other command line arguments sent directly to the
-dast_scan-1  |                         script for items not supported by other command line
-dast_scan-1  |                         arguments
-dast_scan-1  |   --outputFormat OUTPUTFORMAT
-dast_scan-1  |                         Output format for vulnerabilities: only the value
-dast_scan-1  |                         SARIF is available at the moment
-dast_scan-1  |   --requestCookies [REQUESTCOOKIES ...]
-dast_scan-1  |                         DEPRECATED. This parameter has no effect.
-dast_scan-1  |   --requestHeaders [REQUESTHEADERS ...]
-dast_scan-1  |                         Set extra headers for the requests to the target URL
-dast_scan-1  |   --scanMode SCANMODE   Scan Mode - Available modes: baseline, fullscan, and
-dast_scan-1  |                         apiscan (for more information about scan modes visit
-dast_scan-1  |                         https://github.com/soos-io/soos-dast#scan-modes)
-dast_scan-1  |   --apiKey APIKEY       SOOS API Key - get yours from
-dast_scan-1  |                         https://app.soos.io/integrate/dast
-dast_scan-1  |   --apiURL APIURL       SOOS API URL - Intended for internal use only, do not
-dast_scan-1  |                         modify.
-dast_scan-1  |   --clientId CLIENTID   SOOS Client ID - get yours from
-dast_scan-1  |                         https://app.soos.io/integrate/dast
-dast_scan-1  |   --integrationName INTEGRATIONNAME
-dast_scan-1  |                         Integration Name - Intended for internal use only.
-dast_scan-1  |   --integrationType INTEGRATIONTYPE
-dast_scan-1  |                         Integration Type - Intended for internal use only.
-dast_scan-1  |   --logLevel LOGLEVEL   Minimum level to show logs: DEBUG, INFO, WARN, FAIL,
-dast_scan-1  |                         ERROR.
-dast_scan-1  |   --scriptVersion SCRIPTVERSION
-dast_scan-1  |                         Script Version - Intended for internal use only.
-dast_scan-1  |   --verbose             DEPRECATED - Change logLevel to DEBUG. This parameter
-dast_scan-1  |                         has no effect.
+===== Logs for e2e_test =====
+===== Logs for performance_test =====
 ===== Logs for done =====
-done-1  | done

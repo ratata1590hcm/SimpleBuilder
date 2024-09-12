@@ -48,6 +48,8 @@ services:
     command: /action/run.sh
     working_dir: /workspace
     user: root
+    environment:
+      - NVD_APIKEY=${NVD_APIKEY}
     volumes:
       - workspace:/workspace
       - ./task/dependency_scan:/action
