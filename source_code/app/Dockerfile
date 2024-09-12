@@ -3,7 +3,7 @@ WORKDIR /app
 ENV HOME=/app
 COPY pom.xml .
 COPY .m2 .
-RUN mvn dependency:go-offline
+RUN mvn dependency:go-offline -s /app/settings.xml
 COPY . .
 RUN mvn clean package
 USER daemon
