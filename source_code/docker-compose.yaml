@@ -6,9 +6,15 @@ services:
     # entrypoint: [ "/sshd", "-u", "root:" ]
     entrypoint: java -jar app.jar
     working_dir: /app
-    networks:
-      - java_network
+    # networks:
+    #   - java_network
     restart: unless-stopped
+    healthcheck:
+      test: exit 0
+      interval: 30s # Time between running the check (default: 30s)
+      timeout: 10s # Time after which check is considered failed (default: 30s)
+      retries: 3 # Number of times to retry before considering the service unhealthy (default: 3)
+      start_period: 5s # Time to wait before starting health checks (default: 0s)
     # volumes:
     #   - /usr/local/bin/sshd-mini:/sshd
 

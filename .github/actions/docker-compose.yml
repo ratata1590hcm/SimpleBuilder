@@ -86,7 +86,7 @@ services:
   #   working_dir: /workspace
   #   user: root
   #   volumes:
-  #     - workspace:/usr/src
+  #     - workspace:/workspace
   #     - ./task/sonar_scan:/action
   #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonar:latest
   #   build:
@@ -129,21 +129,30 @@ services:
       sonarlint:
         condition: service_completed_successfully
 
+  # source code's application docker compose service
+  app:
+    extends:
+      file: ../../source_code/docker-compose.yaml
+      service: java_latest
+
   # TODO: test please
-  # performance_test:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/performance_test:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/jmeter:latest
-  #   build:
-  #     context: build/jmeter
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  performance_test:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/performance_test:/action
+      - jmeter_result:/jmeter_result
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/jmeter:latest
+    build:
+      context: build/jmeter
+    depends_on:
+      app:
+        condition: service_healthy
+      build:
+        condition: service_completed_successfully
 
   # TODO: test please
   trivy_scan:
@@ -183,20 +192,20 @@ services:
   #       condition: service_completed_successfully
 
   # TODO: test please
-  # e2e_test:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/e2e_test:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/cypress_included:latest
-  #   build:
-  #     context: build/cypress_included
-  #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  e2e_test:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/e2e_test:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/cypress_included:latest
+    build:
+      context: build/cypress_included
+    depends_on:
+      build:
+        condition: service_completed_successfully
 
   done:
     entrypoint: /bin/bash
@@ -224,3 +233,4 @@ volumes:
   workspace:
   docker_data_registry:
   docker_data_build:
+  jmeter_result:

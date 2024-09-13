@@ -5,7 +5,6 @@ cleanup() {
 	echo "export logs..."
 	# docker compose -f "${COMPOSE_FILE}" logs --tail all >build.log
 	rm build.log
-	# trunk-ignore(shellcheck/SC2312)
 	docker compose -f "${COMPOSE_FILE}" config --services | while read -r service; do
 		echo "===== Logs for ${service} =====" >>build.log
 		docker compose -f "${COMPOSE_FILE}" logs --tail all "${service}" >>build.log
