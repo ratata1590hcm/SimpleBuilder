@@ -80,20 +80,20 @@ services:
         condition: service_completed_successfully
 
   # TODO: test please
-  # sonar_scan:
-  #   entrypoint: /bin/bash
-  #   command: /action/run.sh
-  #   working_dir: /workspace
-  #   user: root
-  #   volumes:
-  #     - workspace:/workspace
-  #     - ./task/sonar_scan:/action
-  #   image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonar:latest
-  #   build:
-  #     context: build/sonar
-  #   depends_on:
-  #     trunk_check:
-  #       condition: service_completed_successfully
+  sonar_scan:
+    entrypoint: /bin/bash
+    command: /action/run.sh
+    working_dir: /workspace
+    user: root
+    volumes:
+      - workspace:/workspace
+      - ./task/sonar_scan:/action
+    image: ${REGISTRY_HOST}${REGISTRY_NAMESPACE}/sonar:latest
+    build:
+      context: build/sonar
+    depends_on:
+      trunk_check:
+        condition: service_completed_successfully
 
   sonarlint:
     entrypoint: /bin/bash
@@ -124,8 +124,8 @@ services:
     build:
       context: build/docker
     depends_on:
-      # sonar_scan:
-      #   condition: service_completed_successfully
+      sonar_scan:
+        condition: service_completed_successfully
       sonarlint:
         condition: service_completed_successfully
 

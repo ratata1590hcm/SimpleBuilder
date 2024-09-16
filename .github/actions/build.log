@@ -4,7 +4,7 @@ checkout_source-1  | done
 dependency_scan-1  | [INFO] Checking for updates
 dependency_scan-1  | [INFO] Skipping the NVD API Update as it was completed within the last 240 minutes
 dependency_scan-1  | [INFO] Skipping Known Exploited Vulnerabilities update check since last check was within 24 hours.
-dependency_scan-1  | [INFO] Check for updates complete (1269 ms)
+dependency_scan-1  | [INFO] Check for updates complete (1224 ms)
 dependency_scan-1  | [INFO] 
 dependency_scan-1  | 
 dependency_scan-1  | Dependency-Check is an open source tool performing a best effort analysis of 3rd party dependencies; false positives and false negatives may exist in the analysis performed by the tool. Use of the tool and the reporting provided constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided is at the user's risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.
@@ -46,6 +46,134 @@ trunk_check-1  | Running Trunk check...
 trunk_check-1  | 
 trunk_check-1  | Checked 55 files
 trunk_check-1  | ✔ No issues
+===== Logs for sonar_scan =====
+sonar_scan-1  | start scan
+sonar_scan-1  | http://192.168.0.1:9001
+sonar_scan-1  | 03:30:31.811 INFO  Scanner configuration file: /opt/sonar-scanner/conf/sonar-scanner.properties
+sonar_scan-1  | 03:30:31.816 INFO  Project root configuration file: NONE
+sonar_scan-1  | 03:30:31.834 INFO  SonarScanner CLI 6.1.0.4477
+sonar_scan-1  | 03:30:31.836 INFO  Java 17.0.11 Eclipse Adoptium (64-bit)
+sonar_scan-1  | 03:30:31.836 INFO  Linux 6.1.0-25-amd64 amd64
+sonar_scan-1  | 03:30:31.872 INFO  User cache: /opt/sonar-scanner/.sonar/cache
+sonar_scan-1  | 03:30:33.894 INFO  Communicating with SonarQube Server 9.9.6.92038
+sonar_scan-1  | 03:30:34.488 INFO  Load global settings
+sonar_scan-1  | 03:30:34.613 INFO  Load global settings (done) | time=127ms
+sonar_scan-1  | 03:30:34.615 INFO  Server id: 3B38533C-AZHq3aGeR6rL0-KbXzXi
+sonar_scan-1  | 03:30:34.621 INFO  User cache: /opt/sonar-scanner/.sonar/cache
+sonar_scan-1  | 03:30:34.625 INFO  Load/download plugins
+sonar_scan-1  | 03:30:34.625 INFO  Load plugins index
+sonar_scan-1  | 03:30:34.673 INFO  Load plugins index (done) | time=48ms
+sonar_scan-1  | 03:30:36.427 INFO  Load/download plugins (done) | time=1802ms
+sonar_scan-1  | 03:30:36.982 INFO  Process project properties
+sonar_scan-1  | 03:30:36.989 INFO  Process project properties (done) | time=7ms
+sonar_scan-1  | 03:30:36.991 INFO  Execute project builders
+sonar_scan-1  | 03:30:36.993 INFO  Execute project builders (done) | time=2ms
+sonar_scan-1  | 03:30:36.996 INFO  Project key: test
+sonar_scan-1  | 03:30:36.996 INFO  Base dir: /workspace
+sonar_scan-1  | 03:30:36.997 INFO  Working dir: /workspace/.scannerwork
+sonar_scan-1  | 03:30:37.004 INFO  Load project settings for component key: 'test'
+sonar_scan-1  | 03:30:37.023 INFO  Load project settings for component key: 'test' (done) | time=19ms
+sonar_scan-1  | 03:30:37.182 INFO  Load quality profiles
+sonar_scan-1  | 03:30:37.246 INFO  Load quality profiles (done) | time=64ms
+sonar_scan-1  | 03:30:37.254 INFO  Load active rules
+sonar_scan-1  | 03:30:38.665 INFO  Load active rules (done) | time=1411ms
+sonar_scan-1  | 03:30:38.671 INFO  Load analysis cache
+sonar_scan-1  | 03:30:38.682 INFO  Load analysis cache (119 bytes) | time=11ms
+sonar_scan-1  | 03:30:38.734 INFO  Load project repositories
+sonar_scan-1  | 03:30:38.749 INFO  Load project repositories (done) | time=14ms
+sonar_scan-1  | 03:30:38.782 INFO  Indexing files...
+sonar_scan-1  | 03:30:38.783 INFO  Project configuration:
+sonar_scan-1  | 03:30:38.957 INFO  4 files indexed
+sonar_scan-1  | 03:30:38.957 INFO  0 files ignored because of scm ignore settings
+sonar_scan-1  | 03:30:38.958 INFO  Quality profile for java: Sonar way
+sonar_scan-1  | 03:30:38.958 INFO  Quality profile for xml: Sonar way
+sonar_scan-1  | 03:30:38.958 INFO  Quality profile for yaml: Sonar way
+sonar_scan-1  | 03:30:38.959 INFO  ------------- Run sensors on module test
+sonar_scan-1  | 03:30:39.045 INFO  Load metrics repository
+sonar_scan-1  | 03:30:39.066 INFO  Load metrics repository (done) | time=21ms
+sonar_scan-1  | 03:30:40.472 INFO  Sensor JavaSensor [java]
+sonar_scan-1  | 03:30:40.476 INFO  Configured Java source version (sonar.java.source): none
+sonar_scan-1  | 03:30:40.480 INFO  JavaClasspath initialization
+sonar_scan-1  | 03:30:40.482 INFO  JavaClasspath initialization (done) | time=2ms
+sonar_scan-1  | 03:30:40.482 INFO  JavaTestClasspath initialization
+sonar_scan-1  | 03:30:40.482 INFO  JavaTestClasspath initialization (done) | time=0ms
+sonar_scan-1  | 03:30:40.491 INFO  Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+sonar_scan-1  | 03:30:40.495 INFO  Using ECJ batch to parse 1 Main java source files with batch size 500 KB.
+sonar_scan-1  | 03:30:40.638 INFO  Starting batch processing.
+sonar_scan-1  | 03:30:41.126 INFO  The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+sonar_scan-1  | 03:30:41.519 INFO  100% analyzed
+sonar_scan-1  | 03:30:41.519 INFO  Batch processing: Done.
+sonar_scan-1  | 03:30:41.520 INFO  Did not optimize analysis for any files, performed a full analysis for all 1 files.
+sonar_scan-1  | 03:30:41.521 INFO  No "Test" source files to scan.
+sonar_scan-1  | 03:30:41.521 INFO  No "Generated" source files to scan.
+sonar_scan-1  | 03:30:41.521 INFO  Sensor JavaSensor [java] (done) | time=1049ms
+sonar_scan-1  | 03:30:41.521 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+sonar_scan-1  | 03:30:41.522 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+sonar_scan-1  | 03:30:41.523 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+sonar_scan-1  | 03:30:41.523 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=2ms
+sonar_scan-1  | 03:30:41.523 INFO  Sensor IaC CloudFormation Sensor [iac]
+sonar_scan-1  | 03:30:41.527 INFO  0 source files to be analyzed
+sonar_scan-1  | 03:30:41.534 INFO  0/0 source files have been analyzed
+sonar_scan-1  | 03:30:41.534 INFO  Sensor IaC CloudFormation Sensor [iac] (done) | time=11ms
+sonar_scan-1  | 03:30:41.534 INFO  Sensor IaC Kubernetes Sensor [iac]
+sonar_scan-1  | 03:30:41.536 INFO  0 source files to be analyzed
+sonar_scan-1  | 03:30:41.539 INFO  0/0 source files have been analyzed
+sonar_scan-1  | 03:30:41.539 INFO  Sensor IaC Kubernetes Sensor [iac] (done) | time=5ms
+sonar_scan-1  | 03:30:41.539 INFO  Sensor JavaScript inside YAML analysis [javascript]
+sonar_scan-1  | 03:30:41.541 INFO  No input files found for analysis
+sonar_scan-1  | 03:30:41.542 INFO  Hit the cache for 0 out of 0
+sonar_scan-1  | 03:30:41.543 INFO  Miss the cache for 0 out of 0
+sonar_scan-1  | 03:30:41.543 INFO  Sensor JavaScript inside YAML analysis [javascript] (done) | time=4ms
+sonar_scan-1  | 03:30:41.543 INFO  Sensor CSS Rules [javascript]
+sonar_scan-1  | 03:30:41.543 INFO  No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+sonar_scan-1  | 03:30:41.543 INFO  Sensor CSS Rules [javascript] (done) | time=0ms
+sonar_scan-1  | 03:30:41.543 INFO  Sensor C# Project Type Information [csharp]
+sonar_scan-1  | 03:30:41.544 INFO  Sensor C# Project Type Information [csharp] (done) | time=1ms
+sonar_scan-1  | 03:30:41.544 INFO  Sensor C# Analysis Log [csharp]
+sonar_scan-1  | 03:30:41.555 INFO  Sensor C# Analysis Log [csharp] (done) | time=11ms
+sonar_scan-1  | 03:30:41.555 INFO  Sensor C# Properties [csharp]
+sonar_scan-1  | 03:30:41.556 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+sonar_scan-1  | 03:30:41.556 INFO  Sensor SurefireSensor [java]
+sonar_scan-1  | 03:30:41.556 INFO  parsing [/workspace/target/surefire-reports]
+sonar_scan-1  | 03:30:41.557 INFO  Sensor SurefireSensor [java] (done) | time=1ms
+sonar_scan-1  | 03:30:41.557 INFO  Sensor HTML [web]
+sonar_scan-1  | 03:30:41.559 INFO  Sensor HTML [web] (done) | time=2ms
+sonar_scan-1  | 03:30:41.560 INFO  Sensor XML Sensor [xml]
+sonar_scan-1  | 03:30:41.564 INFO  1 source file to be analyzed
+sonar_scan-1  | 03:30:41.699 INFO  1/1 source file has been analyzed
+sonar_scan-1  | 03:30:41.699 INFO  Sensor XML Sensor [xml] (done) | time=139ms
+sonar_scan-1  | 03:30:41.699 INFO  Sensor TextAndSecretsSensor [text]
+sonar_scan-1  | 03:30:41.711 INFO  3 source files to be analyzed
+sonar_scan-1  | 03:30:41.721 INFO  3/3 source files have been analyzed
+sonar_scan-1  | 03:30:41.722 INFO  Sensor TextAndSecretsSensor [text] (done) | time=23ms
+sonar_scan-1  | 03:30:41.722 INFO  Sensor VB.NET Project Type Information [vbnet]
+sonar_scan-1  | 03:30:41.723 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+sonar_scan-1  | 03:30:41.723 INFO  Sensor VB.NET Analysis Log [vbnet]
+sonar_scan-1  | 03:30:41.734 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=11ms
+sonar_scan-1  | 03:30:41.734 INFO  Sensor VB.NET Properties [vbnet]
+sonar_scan-1  | 03:30:41.734 INFO  Sensor VB.NET Properties [vbnet] (done) | time=0ms
+sonar_scan-1  | 03:30:41.734 INFO  Sensor IaC Docker Sensor [iac]
+sonar_scan-1  | 03:30:41.735 INFO  1 source file to be analyzed
+sonar_scan-1  | 03:30:41.811 INFO  1/1 source file has been analyzed
+sonar_scan-1  | 03:30:41.811 INFO  Sensor IaC Docker Sensor [iac] (done) | time=77ms
+sonar_scan-1  | 03:30:41.817 INFO  ------------- Run sensors on project
+sonar_scan-1  | 03:30:41.869 INFO  Sensor Analysis Warnings import [csharp]
+sonar_scan-1  | 03:30:41.870 INFO  Sensor Analysis Warnings import [csharp] (done) | time=1ms
+sonar_scan-1  | 03:30:41.870 INFO  Sensor Zero Coverage Sensor
+sonar_scan-1  | 03:30:41.875 INFO  Sensor Zero Coverage Sensor (done) | time=5ms
+sonar_scan-1  | 03:30:41.876 INFO  Sensor Java CPD Block Indexer
+sonar_scan-1  | 03:30:41.886 INFO  Sensor Java CPD Block Indexer (done) | time=10ms
+sonar_scan-1  | 03:30:41.893 INFO  CPD Executor Calculating CPD for 1 file
+sonar_scan-1  | 03:30:41.900 INFO  CPD Executor CPD calculation finished (done) | time=7ms
+sonar_scan-1  | 03:30:41.967 INFO  Analysis report generated in 64ms, dir size=127.7 kB
+sonar_scan-1  | 03:30:41.982 INFO  Analysis report compressed in 15ms, zip size=20.0 kB
+sonar_scan-1  | 03:30:42.011 INFO  Analysis report uploaded in 29ms
+sonar_scan-1  | 03:30:42.012 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://192.168.0.1:9001/dashboard?id=test
+sonar_scan-1  | 03:30:42.013 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+sonar_scan-1  | 03:30:42.013 INFO  More about the report processing at http://192.168.0.1:9001/api/ce/task?id=AZH44e7KUl2ExTVJT4zz
+sonar_scan-1  | 03:30:42.023 INFO  Analysis total time: 5.471 s
+sonar_scan-1  | 03:30:42.024 INFO  EXECUTION SUCCESS
+sonar_scan-1  | 03:30:42.024 INFO  Total time: 10.219s
 ===== Logs for sonarlint =====
 sonarlint-1  | /workspace
 sonarlint-1  | INFO: Java 1.8.0_161 Oracle Corporation (64-bit)
@@ -56,12 +184,12 @@ sonarlint-1  | INFO: 6 files indexed
 sonarlint-1  | INFO: Configured Java source version (sonar.java.source): none
 sonarlint-1  | INFO: JavaClasspath initialization
 sonarlint-1  | INFO: Bytecode of dependencies was not provided for analysis of source files, you might end up with less precise results. Bytecode can be provided using sonar.java.libraries property
-sonarlint-1  | INFO: JavaClasspath initialization (done) | time=1ms
+sonarlint-1  | INFO: JavaClasspath initialization (done) | time=2ms
 sonarlint-1  | INFO: JavaTestClasspath initialization
-sonarlint-1  | INFO: JavaTestClasspath initialization (done) | time=1ms
+sonarlint-1  | INFO: JavaTestClasspath initialization (done) | time=0ms
 sonarlint-1  | INFO: Java Main Files AST scan
 sonarlint-1  | INFO: 1 source files to be analyzed
-sonarlint-1  | INFO: Java Main Files AST scan (done) | time=278ms
+sonarlint-1  | INFO: Java Main Files AST scan (done) | time=482ms
 sonarlint-1  | INFO: 1/1 source files have been analyzed
 sonarlint-1  | INFO: Java Test Files AST scan
 sonarlint-1  | INFO: 0 source files to be analyzed
@@ -82,8 +210,8 @@ sonarlint-1  | INFO: SonarLint HTML Report generated: /workspace/source_code/.so
 sonarlint-1  | INFO: ------------------------------------------------------------------------
 sonarlint-1  | INFO: EXECUTION SUCCESS
 sonarlint-1  | INFO: ------------------------------------------------------------------------
-sonarlint-1  | INFO: Total time: 1.528s
-sonarlint-1  | INFO: Final Memory: 15M/2050M
+sonarlint-1  | INFO: Total time: 2.033s
+sonarlint-1  | INFO: Final Memory: 15M/2154M
 sonarlint-1  | INFO: ------------------------------------------------------------------------
 sonarlint-1  | No issues found by SonarLint.
 ===== Logs for build =====
@@ -101,41 +229,41 @@ build-1  | #3 [java_latest internal] load metadata for docker.io/library/openjdk
 build-1  | #3 DONE 1.5s
 build-1  | 
 build-1  | #2 [java_latest internal] load metadata for docker.io/library/maven:3.9.8-eclipse-temurin-21
-build-1  | #2 DONE 3.0s
+build-1  | #2 DONE 3.1s
 build-1  | 
 build-1  | #4 [java_latest internal] load .dockerignore
 build-1  | #4 transferring context: 2B done
 build-1  | #4 DONE 0.1s
 build-1  | 
-build-1  | #5 [java_latest build 1/7] FROM docker.io/library/maven:3.9.8-eclipse-temurin-21@sha256:de18e4e51396ad9266f76669779ed6d6b49fbb0f45ed6f39169d87378d548d7d
+build-1  | #5 [java_latest stage-1 1/3] FROM docker.io/library/openjdk:21@sha256:af9de795d1f8d3b6172f6c55ca9ba1c5768baa11bb2dc8af7045c7db9d4c33ac
 build-1  | #5 DONE 0.0s
 build-1  | 
-build-1  | #6 [java_latest stage-1 1/3] FROM docker.io/library/openjdk:21@sha256:af9de795d1f8d3b6172f6c55ca9ba1c5768baa11bb2dc8af7045c7db9d4c33ac
+build-1  | #6 [java_latest build 1/7] FROM docker.io/library/maven:3.9.8-eclipse-temurin-21@sha256:de18e4e51396ad9266f76669779ed6d6b49fbb0f45ed6f39169d87378d548d7d
 build-1  | #6 DONE 0.0s
 build-1  | 
 build-1  | #7 [java_latest internal] load build context
 build-1  | #7 transferring context: 4.06kB done
 build-1  | #7 DONE 0.1s
 build-1  | 
-build-1  | #8 [java_latest build 4/7] COPY .m2 .
+build-1  | #8 [java_latest build 5/7] RUN mvn dependency:go-offline -s /app/settings.xml
 build-1  | #8 CACHED
 build-1  | 
-build-1  | #9 [java_latest build 7/7] RUN mvn clean package
+build-1  | #9 [java_latest build 2/7] WORKDIR /app
 build-1  | #9 CACHED
 build-1  | 
-build-1  | #10 [java_latest build 3/7] COPY pom.xml .
+build-1  | #10 [java_latest build 4/7] COPY .m2 .
 build-1  | #10 CACHED
 build-1  | 
-build-1  | #11 [java_latest build 5/7] RUN mvn dependency:go-offline -s /app/settings.xml
+build-1  | #11 [java_latest build 3/7] COPY pom.xml .
 build-1  | #11 CACHED
 build-1  | 
-build-1  | #12 [java_latest build 6/7] COPY . .
+build-1  | #12 [java_latest stage-1 2/3] WORKDIR /app
 build-1  | #12 CACHED
 build-1  | 
-build-1  | #13 [java_latest stage-1 2/3] WORKDIR /app
+build-1  | #13 [java_latest build 6/7] COPY . .
 build-1  | #13 CACHED
 build-1  | 
-build-1  | #14 [java_latest build 2/7] WORKDIR /app
+build-1  | #14 [java_latest build 7/7] RUN mvn clean package
 build-1  | #14 CACHED
 build-1  | 
 build-1  | #15 [java_latest stage-1 3/3] COPY --from=build /app/target/app-jar-with-dependencies.jar app.jar
@@ -149,15 +277,6 @@ build-1  | #16 DONE 0.0s
 build-1  | 
 build-1  | #17 [java_latest] resolving provenance for metadata file
 build-1  | #17 DONE 0.0s
-===== Logs for trivy_scan =====
-trivy_scan-1  | Scanning localhost:5000/library/app:latest for critical vulnerabilities...
-trivy_scan-1  | No critical vulnerabilities found for localhost:5000/library/app:latest.
-trivy_scan-1  | No critical JSON files found.
-===== Logs for done =====
-done-1  | done
-===== Logs for app =====
-app-1  | Sep 13, 2024 9:56:58 AM com.example.App main
-app-1  | INFO: Hello, World!
 ===== Logs for e2e_test =====
 e2e_test-1  | Usage: cypress run [options]
 e2e_test-1  | 
@@ -190,65 +309,19 @@ e2e_test-1  |   -s, --spec <spec>                                           runs
 e2e_test-1  |   -t, --tag <tag>                                             named tag(s) for recorded runs in Cypress Cloud
 e2e_test-1  |   --dev                                                       runs cypress in development and bypasses binary check
 e2e_test-1  |   -h, --help                                                  display help for command
+===== Logs for trivy_scan =====
+trivy_scan-1  | Scanning localhost:5000/library/app:latest for critical vulnerabilities...
+trivy_scan-1  | No critical vulnerabilities found for localhost:5000/library/app:latest.
+trivy_scan-1  | No critical JSON files found.
+===== Logs for done =====
+done-1  | done
+===== Logs for app =====
+app-1  | Sep 16, 2024 3:30:03 AM com.example.App main
+app-1  | INFO: Hello, World!
 ===== Logs for performance_test =====
-performance_test-1  | Sep 13, 2024 11:57:34 AM java.util.prefs.FileSystemPreferences$1 run
+performance_test-1  | Sep 16, 2024 5:30:48 AM java.util.prefs.FileSystemPreferences$1 run
 performance_test-1  | INFO: Created user preferences directory.
 performance_test-1  | Creating summariser <summary>
 performance_test-1  | Created the tree successfully using /workspace/jmeter/test-plan.jmx
-performance_test-1  | Starting standalone test @ September 13, 2024 11:57:34 AM CEST (1726221454842)
+performance_test-1  | Starting standalone test @ September 16, 2024 5:30:49 AM CEST (1726457449326)
 performance_test-1  | Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
-performance_test-1  | summary +      1 in 00:00:00 =    4.0/s Avg:    57 Min:    57 Max:    57 Err:     1 (100.00%) Active: 1 Started: 1 Finished: 0
-===== Logs for sonar_scan =====
-sonar_scan-1  | 09:57:24.518 INFO  Scanner configuration file: /opt/sonar-scanner/conf/sonar-scanner.properties
-sonar_scan-1  | 09:57:24.522 INFO  Project root configuration file: NONE
-sonar_scan-1  | 09:57:24.539 INFO  SonarScanner CLI 6.1.0.4477
-sonar_scan-1  | 09:57:24.541 INFO  Java 17.0.11 Eclipse Adoptium (64-bit)
-sonar_scan-1  | 09:57:24.542 INFO  Linux 6.1.0-25-amd64 amd64
-sonar_scan-1  | 09:57:24.577 INFO  User cache: /opt/sonar-scanner/.sonar/cache
-sonar_scan-1  | 09:57:25.350 INFO  EXECUTION FAILURE
-sonar_scan-1  | 09:57:25.352 INFO  Total time: 0.836s
-sonar_scan-1  | 09:57:25.352 ERROR Error during SonarScanner CLI execution
-sonar_scan-1  | java.lang.IllegalStateException: Failed to get server version
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.ScannerEngineBootstrapper.getServerVersion(ScannerEngineBootstrapper.java:148)
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.ScannerEngineBootstrapper.bootstrap(ScannerEngineBootstrapper.java:112)
-sonar_scan-1  | 	at org.sonarsource.scanner.cli.Main.analyze(Main.java:75)
-sonar_scan-1  | 	at org.sonarsource.scanner.cli.Main.main(Main.java:63)
-sonar_scan-1  | Caused by: java.lang.IllegalStateException: Call to URL [http://172.18.0.1:9001/api/v2/analysis/version] failed
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.internal.http.ServerConnection.callUrl(ServerConnection.java:178)
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.internal.http.ServerConnection.callApi(ServerConnection.java:145)
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.internal.http.ServerConnection.callRestApi(ServerConnection.java:123)
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.ScannerEngineBootstrapper.getServerVersion(ScannerEngineBootstrapper.java:143)
-sonar_scan-1  | 	... 3 common frames omitted
-sonar_scan-1  | Caused by: java.net.ConnectException: Failed to connect to /172.18.0.1:9001
-sonar_scan-1  | 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
-sonar_scan-1  | 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
-sonar_scan-1  | 	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
-sonar_scan-1  | 	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
-sonar_scan-1  | 	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
-sonar_scan-1  | 	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
-sonar_scan-1  | 	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
-sonar_scan-1  | 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-sonar_scan-1  | 	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
-sonar_scan-1  | 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-sonar_scan-1  | 	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
-sonar_scan-1  | 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-sonar_scan-1  | 	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
-sonar_scan-1  | 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-sonar_scan-1  | 	at okhttp3.logging.HttpLoggingInterceptor.intercept(HttpLoggingInterceptor.kt:221)
-sonar_scan-1  | 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-sonar_scan-1  | 	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
-sonar_scan-1  | 	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
-sonar_scan-1  | 	at org.sonarsource.scanner.lib.internal.http.ServerConnection.callUrl(ServerConnection.java:176)
-sonar_scan-1  | 	... 6 common frames omitted
-sonar_scan-1  | Caused by: java.net.ConnectException: Connection refused
-sonar_scan-1  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-sonar_scan-1  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
-sonar_scan-1  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
-sonar_scan-1  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
-sonar_scan-1  | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
-sonar_scan-1  | 	at java.base/java.net.Socket.connect(Unknown Source)
-sonar_scan-1  | 	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
-sonar_scan-1  | 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
-sonar_scan-1  | 	... 24 common frames omitted
-sonar_scan-1  | 09:57:25.355 ERROR 
-sonar_scan-1  | 09:57:25.355 ERROR Re-run SonarScanner CLI using the -X switch to enable full debug logging.
