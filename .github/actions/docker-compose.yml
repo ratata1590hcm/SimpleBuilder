@@ -79,7 +79,7 @@ services:
       dependency_scan:
         condition: service_completed_successfully
 
-  # TODO: test please
+  # TODO: test please => DONE
   sonar_scan:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -135,7 +135,7 @@ services:
       file: ../../source_code/docker-compose.yaml
       service: java_latest
 
-  # TODO: test please
+  # TODO: test please => DONE
   performance_test:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -154,7 +154,7 @@ services:
       build:
         condition: service_completed_successfully
 
-  # TODO: test please
+  # TODO: test please => DONE
   trivy_scan:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -174,6 +174,25 @@ services:
       build:
         condition: service_completed_successfully
 
+  # zap:
+  #   image: zaproxy/zap-stable
+  #   container_name: zap-daemon
+  #   command: zap.sh -daemon -host 0.0.0.0 -port 8080
+  #   volumes:
+  #     - ./zap/wrk:/zap/wrk
+  #     - ./zap/reports:/zap/reports
+  #   ports:
+  #     - 8080:8080
+  #   healthcheck:
+  #     test: curl -f http://localhost:8080
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 3
+  #     start_period: 10s
+  #   depends_on:
+  #     build:
+  #       condition: service_completed_successfully
+
   # TODO: test please
   # dast_scan:
   #   entrypoint: /bin/bash
@@ -188,10 +207,10 @@ services:
   #   build:
   #     context: build/dast_scan
   #   depends_on:
-  #     build:
-  #       condition: service_completed_successfully
+  #     zap:
+  #       condition: service_healthy
 
-  # TODO: test please
+  # TODO: test please => DONE
   e2e_test:
     entrypoint: /bin/bash
     command: /action/run.sh
@@ -220,12 +239,12 @@ services:
     build:
       context: build/bash
     depends_on:
-      # performance_test:
-      #   condition: service_completed_successfully
+      performance_test:
+        condition: service_completed_successfully
       trivy_scan:
         condition: service_completed_successfully
-      # e2e_test:
-      #   condition: service_completed_successfully
+      e2e_test:
+        condition: service_completed_successfully
       # dast_scan:
       #   condition: service_completed_successfully
 
